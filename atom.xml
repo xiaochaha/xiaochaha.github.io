@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Ashtime</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-11-30T12:18:21.039Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Ash</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>出大事情.md</title>
+    <link href="http://yoursite.com/2019/11/30/1-md/"/>
+    <id>http://yoursite.com/2019/11/30/1-md/</id>
+    <published>2019-11-30T12:14:44.000Z</published>
+    <updated>2019-11-30T12:18:21.039Z</updated>
+    
+    <content type="html"><![CDATA[<p>不备份的结果就是重新部署</p><p>慢慢更新</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;不备份的结果就是重新部署&lt;/p&gt;
+&lt;p&gt;慢慢更新&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="自我" scheme="http://yoursite.com/categories/%E8%87%AA%E6%88%91/"/>
+    
+    
+      <category term="关于blog" scheme="http://yoursite.com/tags/%E5%85%B3%E4%BA%8Eblog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/11/30/hello-world/"/>
+    <id>http://yoursite.com/2019/11/30/hello-world/</id>
+    <published>2019-11-30T11:08:35.000Z</published>
+    <updated>2019-11-30T12:16:57.368Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hello World! </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Hello World! &lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
