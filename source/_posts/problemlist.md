@@ -2235,13 +2235,116 @@ class Student{
 ### 1051==集合Map之HashMap==
 
 ```java
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.Set;
 
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sin=new Scanner(System.in);
+		String []countries= {new String("Japan"),new String("Germany"),new String("China")};
+		String []capitals= {new String("Yokyo"),new String("Berlin"),new String("BeiJing")};
+		Map<String,String>m=new HashMap<String,String>();
+		m.put(countries[0],capitals[0]);
+		m.put(countries[1],capitals[1]);
+		m.put(countries[2],capitals[2]);
+		String n=sin.next();
+		findCity(m,n);
+		
+		
+	}
+
+	private static  void findCity(Map<String,String> m,String n) {
+		Set<String> setCitys=m.keySet();
+		Iterator<String> it=setCitys.iterator();
+		boolean flag=false;
+		while (it.hasNext()) {
+			
+			String country=it.next().toString();
+			if (country.equals(n)) {
+				System.out.println(m.get(n));
+				flag=true;
+				break;
+			}			
+		}
+		if (flag==false) {
+			System.out.println("Not find!");
+		}
+
+		
+	}
+}
 ```
 
 ### 1052==集合Map之TreeMap==
 
 ```java
 
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sin = new Scanner(System.in);
+		int[] nums = { 5, 1, 6, 2, 7, 3, 8, 4, 9, 10 };
+		String[] numStrings = { "five", "one", "six", "two", "seven", "three", "eight", "four", "nine", "ten" };
+		Map<Integer, String> m = new TreeMap<Integer, String>();
+		m.put(nums[0], numStrings[0]);
+		m.put(nums[1], numStrings[1]);
+		m.put(nums[2], numStrings[2]);
+		m.put(nums[3], numStrings[3]);
+		m.put(nums[4], numStrings[4]);
+		m.put(nums[5], numStrings[5]);
+		m.put(nums[6], numStrings[6]);
+		m.put(nums[7], numStrings[7]);
+		m.put(nums[8], numStrings[8]);
+		m.put(nums[9], numStrings[9]);
+
+		int n = sin.nextInt();
+		printnum(m);
+		findnum(m, n);
+
+	}
+
+	private static void printnum(Map<Integer, String> m) {
+		System.out.println("--TreeMap--");
+		Set<Integer> setNums = m.keySet();
+		Iterator<Integer> it = setNums.iterator();
+		while (it.hasNext()) {
+
+			int num = it.next();
+			String numString = m.get(num);
+			System.out.println(num+"->"+numString);
+		}
+	}
+
+	private static void findnum(Map<Integer, String> m, int n) {
+		System.out.println("--SearchTreeMap--");
+		Set<Integer> setNums = m.keySet();
+		Iterator<Integer> it = setNums.iterator();
+		boolean flag = false;
+		while (it.hasNext()) {
+
+			int num = it.next();
+			if (num == n) {
+				System.out.println(m.get(n));
+				flag = true;
+				break;
+			}
+		}
+		if (flag == false) {
+			System.out.println("Not find!");
+		}
+
+	}
+}
 ```
 
 ### 1053==类与对象-银行帐户==未完成
