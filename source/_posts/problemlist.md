@@ -4,7 +4,7 @@ date: 2019-12-03 21:34:14
 tags: 
 - 'Java基础题'
 - ‘校内’
-categories: 'J2SE'
+categories: 'JavaSE'
 ---
 
 http://10.248.61.41:8080/JudgeOnline/problemlist
