@@ -1,5 +1,5 @@
 ---
-title: 开启新的冒险（luogu）
+title: 开启新的冒险（luogu）java
 date: 2019-12-10 23:06:39
 tags:
 - 'Java基础题'

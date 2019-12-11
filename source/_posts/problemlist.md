@@ -2347,38 +2347,45 @@ public class Main {
 }
 ```
 
-### 1053==类与对象-银行帐户==未完成
+### 1053==类与对象-银行帐户==
 
 ```java
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 
 public class Main {
 	public static void main(String[] args) {
 		Scanner in=new Scanner(System.in);
-		Account account=new Account(1000.0);
-		//account.print();
+		Account account=new Account();
+		account.setId(101);
+		double money=in.nextDouble();
 		double nums1=in.nextDouble();
 		double nums2=in.nextDouble();
+		account.setBalance(money);
 		account.inPut(nums1);
 		account.outPut(nums2);
 		
 	}
 }
 class Account{
-	double balance;
-	String date;
-	Date now = new Date(); 
+	private int id;
+	private double balance;
+	private double annulRate;
 	
-	public Account(double balance) {
-		super();
-		this.balance = balance;
+	public Account() {
 		
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
-		this.date = df.format(now);
-		 
+	}
+	public Account(int id,double balance) {
+		super();
+		this.id=id;
+		this.balance = balance;	 
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public double getBalance() {
 		return balance;
@@ -2386,14 +2393,11 @@ class Account{
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
-	public String getDate() {
-		return date;
+	public double getAnnulRate() {
+		return annulRate;
 	}
-	public void setDate(String date) {
-		this.date = date;
-	}
-	public void print(){
-		System.out.println("date:"+date+",the balance is:"+this.balance);
+	public void setAnnulRate(double annulRate) {
+		this.annulRate = annulRate;
 	}
 	public void inPut(double nums){
 		this.balance+=nums;
@@ -2409,8 +2413,9 @@ class Account{
 	}
 	
 }
+
 ```
-### 1054==类与对象(Circle)==未完成
+### 1054==类与对象(Circle)==
 
 ```java
 import java.util.Scanner;
@@ -2418,15 +2423,13 @@ import java.util.Scanner;
 public class Main{
 
 public static void main(String args[])throws Exception{
-
+	 Circle circle=new Circle();
+     System.out.println(circle.getRadius());
      Scanner cin=new Scanner(System.in);
-     
      double r=cin.nextDouble();
-     Circle circle=new Circle();
-     System.out.printf("%.2f\n",circle.getRadius());
-     circle=new Circle(r);
+     circle.setRadius(r);
      System.out.printf("%.2f\n",circle.getArea());
-     System.out.printf("%.2f",circle.getPerimeter());
+     System.out.printf("%.2f\n",circle.getPerimeter());
 
 	}
 
@@ -2435,12 +2438,13 @@ class Circle{
 	double centerX;
 	double centerY;
 	double radius;
-	public Circle(double radius) {
-		this.radius = radius;
-	}
 	public Circle(){
 		this(1.00);
 	}
+	public Circle(double radius) {
+		this.radius = radius;
+	}
+	
 	public double getRadius() {
 		return this.radius;
 	}
@@ -2458,7 +2462,7 @@ class Circle{
 
 ```
 
-### 1055==类的继承-动物==未完成
+### 1055==类的继承-动物==
 
 ```java
 import java.util.Scanner;
@@ -2472,9 +2476,9 @@ public class Main {
 		Bird bird=new Bird(birdSwing);
 		Fish fish=new Fish(fishFins);
 		Dog dog=new Dog(dogLegs);
-		System.out.println(bird.toString());
-		System.out.println(fish.toString());
-		System.out.println(dog.toString());
+		bird.fly();
+		fish.swim();
+		dog.walk();
 		
 	}
 }
@@ -2482,69 +2486,44 @@ public class Main {
 class Animal {
 	String name;
 
-	public void eat() {}
+	public void eat() {
+		System.out.println("I can eat anything.");
+	}
 }
 
 class Bird extends Animal {
 	int numberOfWings;
 	
 	public Bird(int numberOfWings) {
-		super();
+		super.name=name;
 		this.numberOfWings = numberOfWings;
 	}
 	public void fly() {
-		// TODO Auto-generated method stub
+		System.out.println("The bird has "+this.numberOfWings+" wings,can fly;");
 
-	}
-	@Override
-	public void eat() {
-		// TODO Auto-generated method stub
-
-	}
-	@Override
-	public String toString() {
-		return "The bird has "+this.numberOfWings+" swings,can fly;";
 	}
 }
 class Fish extends Animal {
 	int numberOfFins;
 	
 	public Fish(int numberOfFins) {
-		
+		super.name=name;
 		this.numberOfFins = numberOfFins;
 	}
 	public void swim(){
-		// TODO Auto-generated method stub
+		System.out.println("The fish has "+this.numberOfFins+" fins,can swim;");
 
-	}
-	@Override
-	public void eat() {
-		// TODO Auto-generated method stub
-
-	}
-	@Override
-	public String toString() {
-		return "The fish has "+this.numberOfFins+" fins,can swim;";
 	}
 }
 class Dog extends Animal {
 	int numberOfLegs;
 	public Dog(int numberOfLegs) {
-		
+		super.name=name;
 		this.numberOfLegs = numberOfLegs;
 	}
 	public void walk() {
-		// TODO Auto-generated method stub
+		System.out.println("The dog has "+this.numberOfLegs+" wings,can run.");
 
-	}
-	@Override
-	public void eat() {
-		// TODO Auto-generated method stub
-
-	}
-	@Override
-	public String toString() {
-		return "The dog has "+this.numberOfLegs+" legs,can run.";
 	}
 }
 ```
@@ -2601,34 +2580,44 @@ class Cylinder extends Circle{
 	}
 }
 ```
-### 1057==接口与实现--员工年龄降序==未完成
+### 1057==接口与实现--员工年龄降序==
 ```java
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+	
 	public static void main(String[] args) {
+		int id,age;
+		String name;
 		Scanner sc = new Scanner(System.in);
-		Comparable comparable = new Employee();
-		ArrayList<Employee> employees = new ArrayList<Employee>();
-		for (int i = 0; i < 3; i++) {
-			int id = sc.nextInt();
-			String name = sc.next();
-			int age = sc.nextInt();
-			Employee employee = new Employee(id, name, age);
-			employees.add(employee);
-
+		id = sc.nextInt();
+		name = sc.next();
+		age = sc.nextInt();
+		Employee employee1=new Employee(id, name, age);
+		id = sc.nextInt();
+		name = sc.next();
+		age = sc.nextInt();
+		Employee employee2=new Employee(id, name, age);
+		id = sc.nextInt();
+		name = sc.next();
+		age = sc.nextInt();
+		Employee employee3=new Employee(id, name, age);
+		Employee[] employees = new Employee[3];
+		employees[0]=employee1;
+		employees[1]=employee2;
+		employees[2]=employee3;
+		Arrays.sort(employees);
+		System.out.println("Sorted by age!");
+		for (Employee e:employees) {
+			System.out.println(e.toString());
 		}
-		comparable.outPrint(employees);
+		
 
 	}
 }
 
-interface Comparable {
-	abstract void outPrint(ArrayList<Employee> employees);
-}
-
-class Employee implements Comparable {
+class Employee implements Comparable<Employee> {
 	int id;
 	String name;
 	int age;
@@ -2667,25 +2656,18 @@ class Employee implements Comparable {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
-	@Override
-	public void outPrint(ArrayList<Employee> employees) {
-		System.out.println("Sorted by age!");
-		for (int i = 0; i < employees.size() - 1; i++) {
-			for (int j = 0; j < employees.size() - i - 1; j++) {
-				Employee t;
-				if (employees.get(j).age < employees.get(j + 1).age) {
-					t = employees.get(j);
-					employees.set(j, employees.get(j + 1));
-					employees.set(j + 1, t);
-				}
-			}
-		}
-		for (Employee employee : employees) {
-			System.out.println(employee.id + " " + employee.name + " " + employee.age);
-		}
+	
+	public int compareTo(Employee employee) {
+		return employee.getAge()-getAge();
 	}
 
+	@Override
+	public String toString() {
+		return "[id=" + this.id + ", name=" + this.name + ", age=" + this.age + "]";
+	}
+
+	
+	
 }
 ```
 ### 1058==接口及其实现--自建比较器(Student)==
