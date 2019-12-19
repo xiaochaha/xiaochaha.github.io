@@ -54,3 +54,96 @@ int main()
 }
 ```
 
+### 7-4 BCD解密
+
+```
+#include <stdio.h>
+
+int main()
+{
+	int num;
+	scanf("%d",&num);
+	int a=num/16;
+	int b=num%16;
+	printf("%d",a*10+b);
+}
+```
+
+### 7-5 表格输出
+
+```c
+#include <stdio.h>
+
+int main()
+{
+	
+	printf("------------------------------------\n");
+	printf("Province      Area(km2)   Pop.(10K)\n");
+	printf("------------------------------------\n");
+	printf("Anhui         139600.00   6461.00\n");
+	printf("Beijing        16410.54   1180.70\n");
+	printf("Chongqing      82400.00   3144.23\n");
+	printf("Shanghai        6340.50   1360.26\n");
+	printf("Zhejiang      101800.00   4894.00\n");
+	printf("------------------------------------");
+}
+```
+
+### 7-6 混合类型数据格式化输入
+
+```c
+#include <stdio.h>
+
+int main()
+{	double a,d;
+	int b;
+	char c;
+	scanf("%lf %d %c %lf",&a,&b,&c,&d);
+	printf("%c %d %.2f %.2f",c,b,a,d);
+}
+```
+
+### 7-7 12-24小时制
+```c
+#include <stdio.h>
+
+int main()
+{
+	int a;int b;
+	
+	scanf("%d:%d",&a,&b);
+	if(a>12){
+		a-=12;
+		printf("%d:%d PM",a,b);	
+	}else if(a==12){
+		printf("%d:%d PM",a,b);	
+	}else{
+		printf("%d:%d AM",a,b);
+	}		
+}
+```
+### 7-8 超速判断
+```c
+#include <stdio.h>
+
+int main()
+{
+	int a;
+	scanf("%d",&a);
+	if(a>60){
+		printf("Speed: %d - Speeding",a);
+	}else{
+		printf("Speed: %d - OK",a);
+	}		
+}
+```
+### 7-9 用天平找小球 
+```c
+#include <stdio.h>
+int main()
+{
+	int a;int b;int c;
+	scanf("%d %d %d",&a,&b,&c);
+	printf("%c",a==b?(b==c?'A':'C'):(a==c?'B':'A'));	
+}
+```
