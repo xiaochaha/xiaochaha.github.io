@@ -2,9 +2,8 @@
 title: 开启新的冒险（luogu）java
 date: 2019-12-10 23:06:39
 tags:
-- 'Java基础题'
 - ‘luogu’
-categories: 'JavaSE'
+categories: 'c'
 
 ---
 
@@ -248,5 +247,81 @@ public class Main {
 		} while (c < 999);
 
 	}
+}
+```
+
+### P1035 [级数求和](https://www.luogu.com.cn/problem/P1035)
+```c
+#include <stdio.h>
+int main(){
+	double sum;
+	int n=0,k;
+	scanf("%d",&k);
+	do{
+		n++;
+		sum+=1.0/n;		
+	}while(sum<=k);
+	printf("%d",n);
+	return 0;
+} 
+```
+### P1423 [小玉在游泳](https://www.luogu.com.cn/problem/P1423)
+```c
+#include <stdio.h>
+int main(){
+	double rate=2.0;
+	double range;
+	int n=0;
+	
+	scanf("%lf",&range);
+	do{
+		range-=rate;
+		rate*=0.98;
+		n++;
+	}while(range>0);
+	printf("%d",n);
+} 
+```
+### P1424 [小鱼的航程(改进版)](https://www.luogu.com.cn/problem/P1424)
+```
+#include <stdio.h>
+int main(){
+	int x,n;
+	int count=1; 
+	int sum=0;
+	
+	scanf("%d %d",&x,&n);
+	while(count<=n){
+		if(x%6==0 || x%7==0){
+			if( x%7==0)
+			{
+				x-=7;
+			}
+		}else{
+			sum+=250;
+		}
+		x++;
+		count++;		
+	}
+	printf("%d",sum);
+} 
+```
+### P1980 [计数问题](https://www.luogu.com.cn/problem/P1980)
+```c
+#include <stdio.h> 
+int main(){
+	int n,x,count=0,s=0;
+	scanf("%d %d",&n,&x);
+	for(int i=1;i<=n;i++){
+		int j=i;
+		while(j>0){
+			s=j%10;
+			j=j/10;
+            if(s==x){
+                count++;
+            }
+		}
+	}
+	printf("%d",count);
 }
 ```

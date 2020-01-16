@@ -346,5 +346,73 @@ int main()
 	printf("%d",time); 
 }
 ```
+### 7-18<<span style="color:red;">递归</span>>二分法求多项式单根 (20分)
+```c
+#include <stdio.h>
+#include <math.h>
+double a3, a2, a1, a0;
+
+double f(double a);
+double getRoot(double a,double b);
+
+int main()
+{
+    double a,b;
+    scanf("%lf%lf%lf%lf",&a3,&a2,&a1,&a0);
+    scanf("%lf%lf",&a,&b);
+    double root=getRoot(a,b);
+    printf("%.2f\n",root);
+
+    return 0;
+}
+
+double f(double a)
+{
+    return a3*pow(a,3)+a2*pow(a,2)+a1*a+a0;
+}
+double getRoot(double a,double b)
+{
+    while((b-a)>0.001)
+    {
+        if(f((a+b)/2)==0)
+        {
+            return (a+b)/2;
+        }
+        else if(f((a+b)/2)*f(a)>0)
+        {
+            a=(a+b)/2;
+        }
+        else
+        {
+            b=(a+b)/2;
+        }
+    }
+        return (a+b)/2;
+}
+
+```
+### 7-19<<span style="color:red;">暴力求解</span>>支票面额 (15分)
+```c
+#include <stdio.h>
+
+int main(){
+	int n,f,y;
+	int count=0;
+	
+	scanf("%d",&n);
+	
+	for(y=0;y<100;y++){
+  		for(f=0;f<100;f++){
+			if(98*f-199*y-n==0){
+				count=1;
+				printf("%d.%d", y, f);
+			}
+		}
+	}
+	if(count==0)
+		printf("No Solution");
+	return 0;
+}
+```
 ----
-未完分割线 还剩34+13
+未完分割线 还剩19+13
