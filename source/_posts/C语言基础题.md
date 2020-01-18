@@ -414,5 +414,90 @@ int main(){
 	return 0;
 }
 ```
+### 7-20 <<span style="color:red;">暴力求解</span>>打印九九口诀表 (15分)
+```c
+#include <stdio.h>
+
+int main(){
+	int n;
+	
+	scanf("%d",&n);
+	
+	for(int i=1;i<=n;i++){
+		for(int j=1;j<=i;j++){
+			printf("%d*%d=%-4d",j,i,i*j);
+		}
+		printf("\n");
+	}
+	
+	return 0;
+}
+
+
+```
+### 7-21 <<span style="color:red;">暴力求解</span>>求特殊方程的正整数解 (15分)
+```c
+#include <stdio.h>
+
+int main(){
+	int x,y,n;
+	int count=0;
+	scanf("%d",&n);
+	
+	for(x=1;x<=n;x++){
+		for(y=x;y<=n;y++){
+			
+			if((x*x+y*y)==n){
+				printf("%d %d\n",x,y);
+				count=1;
+			}
+			
+		}
+	}
+	
+	if(count==0){
+		printf("No Solution");
+	}
+	
+	return 0;
+}
+
+```
+
+### 7-22 <<span style="color:red;">函数</span>>龟兔赛跑 (20分)
+```c
+#include <stdio.h>
+
+int main(){
+	int x=0,y=0,t=1,n;
+	int rest=0;
+	
+	scanf("%d",&n);
+	do{
+		x=3*t;
+		y=9*(t-rest*30);
+		if(t%10==0&& y>x && t!=0){//回头 
+			t+=30;
+			if(t>n){
+				x=3*n;
+				break;
+			}	
+			rest++;
+		}else{
+			t++;
+		}
+	}while(t<=n);
+	if(x>y)
+		printf("@_@ %d",x);
+	else if(x<y)
+		printf("^_^ %d",y);
+	else
+		printf("-_- %d",y);
+	
+	
+	return 0;
+}
+
+```
 ----
 未完分割线 还剩19+13
