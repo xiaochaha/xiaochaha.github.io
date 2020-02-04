@@ -3,7 +3,7 @@ title: 开启新的冒险（luogu）java
 date: 2019-12-10 23:06:39
 tags:
 - ‘luogu’
-categories: 'c'
+categories: 'C语言'
 
 ---
 
