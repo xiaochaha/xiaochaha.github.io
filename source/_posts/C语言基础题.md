@@ -1,5 +1,5 @@
 ---
-title: C语言基础题
+title: PTA- 基础编程题目集
 date: 2019-12-12 22:58:30
 tags: 'C语言基础编程'
 categories: 'C语言'
@@ -740,10 +740,42 @@ int Count_Digit(const int N, const int D) {
 
 #### 解题思路
 
+https://www.cnblogs.com/hx97/p/10789237.html
+
 #### 提交代码
 
 ```c
+void Print_Factorial(const int N) {
+    int a[3000],n = N;
+    if (N == 0)printf("1");
+    else if (N < 0 || N > 1000)printf("Invalid input");
+    else {
+        int w = 0;
+        int i = 0,j=0, k = 0;//i是下标，k是位数
+        while (n)//往数组存数据
+        {
+            a[i++] = n % 10;
+            n /= 10;
+            k++;
+        }
+        for (j=N-1; j>1; j--)//从大到小阶乘
+        {
+            w = 0;
+            for (i = 0; i < k; i++) {
+                n = a[i] * j + w;
+                a[i] = n % 10;
+                w = n / 10;
+            }
+            while (w) {
+                a[i++] = w % 10;
+                w /=10;
+                k++;
+            }
+        }
 
+        for (int ii = k - 1; ii >= 0; ii--)printf("%d", a[ii]);      
+    } 
+}
 ```
 
 ### 总结
@@ -804,10 +836,32 @@ int Count_Digit(const int N, const int D) {
 
 #### 解题思路
 
+这题用冒泡做最后一个测试点过不去。
+
+希尔排序则可以
+
+https://blog.csdn.net/qq_41521512/article/details/82691758
+
 #### 提交代码
 
 ```c
-
+ElementType Median( ElementType A[], int N )
+{
+  ElementType temp;
+  for(int gap= N/2; gap> 0; gap= gap/ 2) //gap是每次排序分组的间隔，每次间隔缩小两倍（其他缩小办法也可以）                                       
+  {
+    for(int i= gap; i< N; i++)//相当于在同一组内采用直接插入排序
+    {
+      for(int j= i- gap; j>= 0 && A[j]> A[j+ gap]; j= j- gap)//如果同一组内前一个元素大于相 gap个位置的元素，则两者交换位置
+      { 
+        temp= A[j];
+        A[j]= A[j+ gap];
+        A[j+ gap]= temp;
+      }
+    }
+  }
+  return A[N/ 2];//返回中间元素
+}
 ```
 
 #### 总结
@@ -877,10 +931,15 @@ int Count_Digit(const int N, const int D) {
 
 #### 解题思路
 
+ez
+
 #### 提交代码
 
 ```c
-
+int even(int n) {
+    if (n % 2 != 0)return 0;
+    else return 1;
+}
 ```
 
 #### 总结
@@ -979,10 +1038,33 @@ int Count_Digit(const int N, const int D) {
 
 #### 解题思路
 
+要注意当索引值比目标值小的边界问题
+
 #### 提交代码
 
 ```c
-
+int  Search_Bin(SSTable T, KeyType k) {
+    int a = T.length;
+    a /= 2;
+    do
+    {
+        if (T.R[a].key == k) {
+            return a;
+        }
+        else if (T.R[a].key < k) {
+            a += (a / 2);
+        }
+        else if (T.R[a].key > k) {
+            a /= 2;
+        }
+        
+        if (a == 0 || a > T.length)
+        {
+            break;
+        }
+    } while (1);
+    return 0;
+}
 ```
 
 #### 总结
@@ -2368,9 +2450,49 @@ int main(){
 
 #### 解题思路
 
+https://blog.csdn.net/yubai258/article/details/81362774
+
 #### 提交代码
 ```
-
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+char a[10]={'a','b','c','d','e','f','g','h','i','j'};
+char b[]={' ',' ','S','B','Q','W','S','B','Q','Y'};
+char num[10];
+gets(num);
+int l=strlen(num);
+int n;
+int i=0;
+int ling=0;
+int k=0;
+if(num[0]=='0'&&l==1) printf("a");//0的情况，但测试点不包含这个
+else
+while(l-->0)
+{
+n=num[i++]-'0';
+if(n!=0)
+{
+if(ling==1)
+printf("a");
+printf("%c",a[n]);
+ling=0;
+}
+else
+{
+ling=1;
+if(l==4&&k==1) printf("W");
+continue;
+}//按照中文习惯，四位数一段规律，再考虑万怎么处理
+if(l>0)
+{
+if(l>4&&l<8) k=1;
+printf("%c",b[l+1]);
+}
+}
+return 0;
+}
 ```
 #### 总结
 
@@ -2996,7 +3118,59 @@ int main()
 
 #### 解题思路
 
+https://www.cnblogs.com/lingr7/p/9432803.html
+
 #### 提交代码
+
+```c
+#include<stdio.h>//标准c，没有用c++的string，这样首先读取字符串就是个问题了 
+#define MAX 500000
+//先处理字符串，删除多余的空格，形成新字符串 
+//Hello World   Here I Come
+int main ()
+{
+    char s;//指单独一个字符 
+    char t[MAX];//创建一个字符数组 
+    int i = 0, count = 0, flag = 0;
+    while ((s=getchar()) != '\n') {//getchar每次从标准输入读入一个字符 ，标准输入会有'\n'??? 
+        if (s != ' ') {
+            flag = 1; //标记遇到单词 
+            t[i++] = s;
+            count = 0;
+        } else if (count > 0) {
+            continue;//contiue跳过
+        } else if (flag) {
+            t[i++] = s; //只有之前遇到单词的情况下碰到空格才把这个空格写入目标字符串 
+            count ++;//这里换成count=1也是完全一样 
+        }
+    } //删除多余的空格，将目标字符串放入 t 中 
+    //这里的count起了什么作用呢？ 
+    //如遇到 Hello,都存入t中，遇到第一个空格，此时count=0,flag=1，把空格存入t,count=1
+    //World后面的空格 ,第二个空格，遇到空格继续读下一个字符即，continue,起一个跳过作用 
+    //开头就是空格咋办？啥也不操作 
+    
+    
+    count = 0;
+    int j;
+    for (i-=1; i>=0; i--) {//i-=1.i=i-1,最后一个标号为i里面是没存东西的 
+        if (t[i] != ' ') {
+            count ++; // 这里的 count 统计的是一个单词里字母的个数 
+        } else if (t[i]==' ' && count > 0) {
+            for (j=i+1; j<=i+count; j++) {
+                printf("%c", t[j]);
+            } //遇到空格就输出单词 
+            printf(" ");
+            count = 0;
+        }
+    } // 还剩最后一个单词没输出，因为最后一个单词可能前方无空格 ，只完成了count++，但是没有遇到 空格，那么逻辑是一样的 
+    for (j=i+1; j<=i+count; j++) {
+        printf("%c", t[j]);
+    } //i,j的变量作用范围非常的有用
+    //这么看来字符数组其实非常的方便，不必非要使用c++的string类 ，continue用来跳过也是极好的 
+
+    return 0; 
+}
+```
 
 #### 总结
 
@@ -3497,9 +3671,37 @@ void division (int i) {//拆分
 
 #### 解题思路
 
+https://blog.csdn.net/omegaaa/article/details/85464327
+
 #### 提交代码
 
 ```c
+#include <stdio.h>
+
+int main()
+{
+	int Digit[100003] = {0},Sum[100003] = {0};
+	int A, N, Flag, i;
+	scanf("%d %d", &A, &N);
+	for( i=1; i<=N; i++){
+		Digit[i]=A;//将Digit数组中前N个元素赋A值；
+	}
+	for( i=1; i<=100003; i++){
+		Sum[i] += Digit[i] * (N-i+1);
+		Sum[i+1] = Sum[i] / 10;
+		Sum[i] %= 10;
+	}
+	for( i=100003; i>=1; i--){
+		if(Sum[i] != 0){
+			Flag = i;
+			break;
+		}
+	}
+	for( i=Flag; i>=1; i--){
+		printf("%d",Sum[i]);
+	}
+	return 0;
+}
 
 ```
 
