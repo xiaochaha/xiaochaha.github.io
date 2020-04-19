@@ -162,16 +162,16 @@ pre 元素可定义预格式化的文本。被包围在 pre 元素中的文本�
     D.` <a href =http://www.pcneredu.com><img src="myhome.jpg">`
 
 17. 无序列表的 HTML 代码是 （**C** ）
-    A. \<li>\<ui>...\</li>\</ul>
-    B. \<ol>\<li>...\</li>\</ol>
-    C. \<ul>\<li>...\</li>\</ul>
-    D.\<li>\<ol>...\</li>\</ol>
+    A. `<li>\<ui>...\</li>\</ul>`
+    B. `<ol>\<li>...\</li>\</ol>`
+    C. `<ul>\<li>...\</li>\</ul>`
+    D.`<li>\<ol>...\</li>\</ol>`
 
 18. 设置围绕表格的边框宽度的 HTML 代码是: （**B** ） 
-    A. \<table size=""> 
-    B. \<table border=""> 
-    C. \<table bordersize=""> 
-    D. \<tableborder="">
+    A. `<table size=""> `
+    B. `<table border=""> `
+    C. `<table bordersize=""> `
+    D. `<tableborder="">`
 
 19. 定义表行的 HTML 是： （ **D**） 
     A. \<table> 
@@ -196,7 +196,7 @@ table data =td 表格数据，列
     C. div 
     D. ul
 
-22. 在 HTML 中,<form action=?>,action 表示： （**C**） 
+22. 在 HTML 中,`<form action=?>`,`action` 表示： （**C**） 
     A. 提交的方式 <span style="color:red">//method="get"</span>
     B. 表单所用的脚本语言
     C. 提交的 URL 地址 
