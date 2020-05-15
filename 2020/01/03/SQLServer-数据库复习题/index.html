@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://ashtime.net').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="数据库sql server复习题，填空由另外一个同学提供，感谢这位同学。答案仅供参考，可能有错 一、填空题（每题1分，共15分）1．二个实体对象之间联系有：一对一、一对多和多对多关联。 2．数据库管理系统的结构主要有：外模式 、概念模式和 内模式三种。 3．典型数据模型主要由层次模型 、网状模型和关系模型、面向对象模型四种。 4．数据表描述的数据媒体类型有哪几种：整数、货币、浮点、日期、字符、二进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库SQLserver复习题">
+<meta property="og:url" content="http://ashtime.net/2020/01/03/SQLServer-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E9%A2%98/index.html">
+<meta property="og:site_name" content="Ashtime">
+<meta property="og:description" content="数据库sql server复习题，填空由另外一个同学提供，感谢这位同学。答案仅供参考，可能有错 一、填空题（每题1分，共15分）1．二个实体对象之间联系有：一对一、一对多和多对多关联。 2．数据库管理系统的结构主要有：外模式 、概念模式和 内模式三种。 3．典型数据模型主要由层次模型 、网状模型和关系模型、面向对象模型四种。 4．数据表描述的数据媒体类型有哪几种：整数、货币、浮点、日期、字符、二进">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-03T12:30:52.000Z">
+<meta property="article:modified_time" content="2020-05-10T07:21:29.546Z">
+<meta property="article:author" content="Ash">
+<meta property="article:tag" content="SQLserver复习题">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://ashtime.net/2020/01/03/SQLServer-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E9%A2%98/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>数据库SQLserver复习题 | Ashtime</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?824d5b976400efa184c9ef0665e74c5f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Ashtime" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ashtime</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/xiaochaha" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ashtime.net/2020/01/03/SQLServer-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.jpg">
+      <meta itemprop="name" content="Ash">
+      <meta itemprop="description" content="在校生的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ashtime">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据库SQLserver复习题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-03 20:30:52" itemprop="dateCreated datePublished" datetime="2020-01-03T20:30:52+08:00">2020-01-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-10 15:21:29" itemprop="dateModified" datetime="2020-05-10T15:21:29+08:00">2020-05-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SQLserver/" itemprop="url" rel="index">
+                    <span itemprop="name">SQLserver</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>数据库sql server复习题，填空由另外一个同学提供，感谢这位同学。<br>答案仅供参考，可能有错</p>
+<h3 id="一、填空题（每题1分，共15分）"><a href="#一、填空题（每题1分，共15分）" class="headerlink" title="一、填空题（每题1分，共15分）"></a>一、填空题（每题1分，共15分）</h3><p>1．二个实体对象之间联系有：<span style="color:red;"><strong>一对一</strong></span>、<span style="color:red;"><strong>一对多</strong></span>和<span style="color:red;"><strong>多对多</strong></span>关联。</p>
+<p>2．数据库管理系统的结构主要有：<span style="color:red;"><strong>外模式</strong></span> 、<span style="color:red;"><strong>概念模式</strong></span>和 <span style="color:red;"><strong>内模式</strong></span>三种。</p>
+<p>3．典型数据模型主要由<span style="color:red;"><strong>层次模型</strong></span> 、<span style="color:red;"><strong>网状模型</strong></span>和<span style="color:red;"><strong>关系模型</strong></span>、<span style="color:red;"><strong>面向对象模型</strong></span>四种。</p>
+<p>4．数据表描述的数据媒体类型有哪几种：<span style="color:red;"><strong>整数、货币、浮点、日期、字符、二进制、图像和文本</strong></span>。</p>
+<p>5．数据完整性主要由、  <span style="color:red;"><strong>实体完整性性</strong></span>     、<span style="color:red;"><strong>域完整性</strong></span>        和  <span style="color:red;"><strong>参照完整性</strong></span>     组成。</p>
+<p>6．SQL Server数据库系统采用验证方式有<span style="color:red;"><strong>Windows身份验证</strong></span>   、<span style="color:red;"><strong>SQL Server身份验证</strong></span>   、<span style="color:red;"><strong>混合验证三种</strong></span>   ；</p>
+<p>7．DBMS就是管理数据库的系统软件，它具有五大功能：<span style="color:red;"><strong>数据的定义   、   数据组织存储和管理  、    数据操纵功能  、    数据库的事务管理和运行管理     、   数据库的建立和维护</strong></span> 。</p>
+<p>8．SQL Server数据库角色由：<span style="color:red;"><strong>服务器角色、客户端角色、自定义角色</strong></span>三种。</p>
+<p>9．在字符串的匹配操作中，通配符   <span style="color:red;"><strong>%</strong></span>  表示包含零个或更多字符的任意字符串。</p>
+<p>10．目前在国内主流的数据库管理系统软件，请你例举五个：<span style="color:red;"><strong>ACCESS</strong></span> 、<span style="color:red;"><strong>SQL Server</strong></span> 、<span style="color:red;"><strong>Oracle</strong></span> 、<span style="color:red;"><strong>MySQL</strong></span>  、<span style="color:red;"><strong>PostgreSQL</strong></span>。</p>
+<p>11．信息与数据的关系<span style="color:red;"><strong>信息通常被认为有一定意义的经过加工的数据.数据是信息的载体，它表示了信息</strong></span>               。</p>
+<p>12．数据库管理系统的崇高体系架构上划分，主要有 <span style="color:red;"><strong>表现层、功能层、逻辑层、数据层</strong></span>层次组成。</p>
+<p>13．数据表连接关系由 <span style="color:red;"><strong>左外链接     、 右外链接      、   全外链接     、   交叉链接      、  内链接</strong></span>五种。</p>
+<p>14．数据库E-R图是指 <span style="color:red;"><strong>实体和对象之间的相互关系用图表的方式进行展现       的关系</strong></span>的关系。</p>
+<p>15．在数据管理系统中，变量有 <span style="color:red;"><strong>固定变量    、    局部变量   和 字段名变量</strong></span>等组成，它们之间主要的区别是 <span style="color:red;"><strong>固定变量不能创建新的变量，是系统固定；局部变量是用户可自定义的变量，作用范围在程序内部；字段名变量定义在数据表中，字段名存储在数据表里不会改变</strong></span>。</p>
+<h3 id="二、选择题（每题2分，共24分）"><a href="#二、选择题（每题2分，共24分）" class="headerlink" title="二、选择题（每题2分，共24分）"></a>二、选择题（每题2分，共24分）</h3><p>1．SQL语言集数据查询、数据操作、数据定义、和数据控制功能于一体，语句CREATE、DROP、ALTER实现下列哪类功能(<span style="color:red;"><strong>C</strong></span>)。</p>
+<p>A．数据查询      B．数据操纵</p>
+<p>C．数据定义      D．数据控制</p>
+<ol start="2">
+<li>在<span style="color:red;">非Unicode</span>统一字符编码标准中，可变长度1000个汉字定义方式是（<span style="color:red;"><strong>C</strong></span>）：</li>
+</ol>
+<p>A．varchar(1000)      B．char(1000)</p>
+<p>C．varchar(2000)      D．varchar(1000) </p>
+<p>3．在销售表中，计算产品的销售量，应使用的聚合函数(<span style="color:red;"><strong>D</strong></span>)：</p>
+<p>A．Order By 销售产品    B．Computer By销售产品</p>
+<p>C．count(销售产品)      D．Sum(销售产品) </p>
+<p>4．在数据表中，需要对某一字段进行域的约束，下列方式中哪一种：(<span style="color:red;"><strong>C</strong></span>) 。</p>
+<p>A．主键（PK）     B．外键(FK)</p>
+<p>C．规则        D．唯一性（Unique）</p>
+<p>5．管理信息系统指的是：(<span style="color:red;"><strong>D</strong></span>)。</p>
+<p>A．管理信息组成及其各部分之间关系的系统</p>
+<p>B．管理信息的计算机软件与硬件结构的组成系统</p>
+<p>C．管理信息的人机交互的应用软件系统</p>
+<p>D．管理信息收集,传输,加工,储存、维护,并围绕管理目标的人机系统.</p>
+<p>6．与 WHERE G BETWEEN 60 AND 100 语句等价的子句是：(<span style="color:red;"><strong>D</strong></span>) 。</p>
+<p>A．WHERE G &gt; 60AND G&lt; 100   B．WHERE G &gt;= 60AND G &lt; 100</p>
+<p>C．WHERE G &gt; 60AND G&lt;=100   D．WHERE G&gt;=60AND G &lt; =100</p>
+<p>7．要查询STUDENT数据库SC表中姓名含有“王”的学生情况，可用(<span style="color:red;"><strong>A</strong></span>)命令。</p>
+<p>A．SELECT * FROM S WHERE 姓名 LIKE ’%王%’</p>
+<p>B．SELECT * FROM STUDENT WHERE 姓名 LIKE ’王’</p>
+<p>C．SELECT * FROM S WHERE 姓名 LIKE ’王_’ </p>
+<p>D．SELECT * FROM S WHERE 姓名=’王’</p>
+<p>8．数据库的内容更新可由(<span style="color:red;"><strong>C</strong></span>)操作实现。</p>
+<p>　A．CREATE和UPDATE  　　  B．INSERT和SELETE</p>
+<p>C．INSERT、UPDATE和DELETE  D．DROP </p>
+<p>9．在视图上不能完成的操作是(<span style="color:red;"><strong>D</strong></span>) 。</p>
+<p>A．在视图上定义新的视图     B．查询操作</p>
+<p>C．更新视图           D．在视图上定义新的基本表</p>
+<p>10．有一个关系：学生（学号，姓名，系别），规定学号的值域是8个数字组成的字符串，这一规则属于(<span style="color:red;"><strong>C</strong></span>) 。</p>
+<p>A．实体完整性约束        B．参照完整性约束</p>
+<p>C．用户自定义完整性约束     D．关键字完整性约束</p>
+<p>11．在销售数据中，要统计某一类产品销售总额，并从中选择满足条件的组，实现这一要求选择(<span style="color:red;"><strong>C</strong></span>)。</p>
+<p>A．Sum, Group by         B．Group by, Where </p>
+<p>C．Sum, Group by, Having     D．Sum, Group by, Where</p>
+<ol start="12">
+<li>下列哪一种约束必须是非空的(<span style="color:red;"><strong>A</strong></span>)：</li>
+</ol>
+<p>A．主键（PK）          B．外键(FK)   </p>
+<p>C．规则（Rule）          D．唯一性（Unique）</p>
+<h3 id="三、基本操作题（每小题5分，共15分）"><a href="#三、基本操作题（每小题5分，共15分）" class="headerlink" title="三、基本操作题（每小题5分，共15分）"></a>三、基本操作题（每小题5分，共15分）</h3><h4 id="1．在学生数据表（student）中，表中有学号-sno-、姓名-sname-、性别-sex-、年龄-sage-、班级（Class）字段，写出T-SQL语言的插入操作命令，其中学号为’1005’，姓名叫’王芳’，年龄20岁，性别的女的同学信息。"><a href="#1．在学生数据表（student）中，表中有学号-sno-、姓名-sname-、性别-sex-、年龄-sage-、班级（Class）字段，写出T-SQL语言的插入操作命令，其中学号为’1005’，姓名叫’王芳’，年龄20岁，性别的女的同学信息。" class="headerlink" title="1．在学生数据表（student）中，表中有学号(sno)、姓名(sname)、性别(sex)、年龄(sage)、班级（Class）字段，写出T-SQL语言的插入操作命令，其中学号为’1005’，姓名叫’王芳’，年龄20岁，性别的女的同学信息。"></a>1．在学生数据表（student）中，表中有学号(sno)、姓名(sname)、性别(sex)、年龄(sage)、班级（Class）字段，写出T-SQL语言的插入操作命令，其中学号为’1005’，姓名叫’王芳’，年龄20岁，性别的女的同学信息。</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student</span><br><span class="line">(sno,sname,sex,asge)<span class="keyword">VALUES</span>(<span class="number">1005</span>,<span class="string">'王芳'</span>，<span class="number">20</span>,<span class="string">'女'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="2．有一学生数据表为student，数据结构与上题想通过，写出T-SQL语言的修改操作命令，同时将王芳同学的年龄与班级修改为“22岁”和“2012级自动化1班-”。"><a href="#2．有一学生数据表为student，数据结构与上题想通过，写出T-SQL语言的修改操作命令，同时将王芳同学的年龄与班级修改为“22岁”和“2012级自动化1班-”。" class="headerlink" title="2．有一学生数据表为student，数据结构与上题想通过，写出T-SQL语言的修改操作命令，同时将王芳同学的年龄与班级修改为“22岁”和“2012级自动化1班 ”。"></a>2．有一学生数据表为student，数据结构与上题想通过，写出T-SQL语言的修改操作命令，同时将王芳同学的年龄与班级修改为“22岁”和“2012级自动化1班 ”。</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> student <span class="keyword">SET</span> sage=<span class="number">22</span>,<span class="keyword">class</span>=<span class="string">'2012级自动化1班'</span></span><br><span class="line"><span class="keyword">WHERE</span> sname=<span class="string">'王芳'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3．用T-SQL语言编写创建一个教师数据表，内容包括教师编号（Tid），长度10位，教师名（Tname），4个汉字、性别（Sex），1个汉字，所在学院（Academy），50个汉字长度，以教师编号作为主键。"><a href="#3．用T-SQL语言编写创建一个教师数据表，内容包括教师编号（Tid），长度10位，教师名（Tname），4个汉字、性别（Sex），1个汉字，所在学院（Academy），50个汉字长度，以教师编号作为主键。" class="headerlink" title="3．用T-SQL语言编写创建一个教师数据表，内容包括教师编号（Tid），长度10位，教师名（Tname），4个汉字、性别（Sex），1个汉字，所在学院（Academy），50个汉字长度，以教师编号作为主键。"></a>3．用T-SQL语言编写创建一个教师数据表，内容包括教师编号（Tid），长度10位，教师名（Tname），4个汉字、性别（Sex），1个汉字，所在学院（Academy），50个汉字长度，以教师编号作为主键。</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dbo.teacher(</span><br><span class="line">	Tid <span class="built_in">INT</span> <span class="keyword">CONSTRAINT</span> PK_1 PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">	Tname <span class="built_in">VARCHAR</span>(<span class="number">8</span>),</span><br><span class="line">	Sex <span class="built_in">char</span>(<span class="number">2</span>),</span><br><span class="line">	Academy <span class="built_in">VARCHAR</span>(<span class="number">100</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="四、编程题（3小题，共16分）"><a href="#四、编程题（3小题，共16分）" class="headerlink" title="四、编程题（3小题，共16分）"></a>四、编程题（3小题，共16分）</h3><h4 id="1．在药品销售表-xs-中，数据结构有药品名称（ypmc）-药品类别（lb），药品数量（sl）等字段，其中药品类别数据存放是76、77、78、空值，分别表示“处方药品”、“非处方药品”、“医疗器械”，“其它药品”。请写出药品数据查询命令，并要求将药品类别编码数据一次性转换为可读文本数据。（5分）"><a href="#1．在药品销售表-xs-中，数据结构有药品名称（ypmc）-药品类别（lb），药品数量（sl）等字段，其中药品类别数据存放是76、77、78、空值，分别表示“处方药品”、“非处方药品”、“医疗器械”，“其它药品”。请写出药品数据查询命令，并要求将药品类别编码数据一次性转换为可读文本数据。（5分）" class="headerlink" title="1．在药品销售表(xs)中，数据结构有药品名称（ypmc）,药品类别（lb），药品数量（sl）等字段，其中药品类别数据存放是76、77、78、空值，分别表示“处方药品”、“非处方药品”、“医疗器械”，“其它药品”。请写出药品数据查询命令，并要求将药品类别编码数据一次性转换为可读文本数据。（5分）"></a>1．在药品销售表(xs)中，数据结构有药品名称（ypmc）,药品类别（lb），药品数量（sl）等字段，其中药品类别数据存放是76、77、78、空值，分别表示“处方药品”、“非处方药品”、“医疗器械”，“其它药品”。请写出药品数据查询命令，并要求将药品类别编码数据一次性转换为可读文本数据。（5分）</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创表添加数据</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dbo.xs(	</span><br><span class="line">	ypmc <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	lb <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	sl <span class="built_in">int</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> xs(ypmc,lb,sl) </span><br><span class="line"><span class="keyword">values</span> (<span class="string">'脑白金'</span>,<span class="string">'76'</span>,<span class="number">122</span>),</span><br><span class="line">(<span class="string">'云南白药'</span>,<span class="string">'77'</span>,<span class="number">122</span>),</span><br><span class="line">(<span class="string">'999皮炎平'</span>,<span class="string">'78'</span>,<span class="number">122</span>),</span><br><span class="line">(<span class="string">'止咳糖浆'</span>,<span class="literal">null</span>,<span class="number">122</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> xs <span class="keyword">SET</span> lb=(<span class="keyword">CASE</span></span><br><span class="line">	<span class="keyword">WHEN</span> lb=<span class="string">'76'</span> <span class="keyword">THEN</span> <span class="string">'处方药品'</span></span><br><span class="line">	<span class="keyword">WHEN</span> lb=<span class="string">'77'</span> <span class="keyword">THEN</span> <span class="string">'非处方药品'</span></span><br><span class="line">	<span class="keyword">WHEN</span> lb=<span class="string">'78'</span> <span class="keyword">THEN</span> <span class="string">'医疗器械'</span></span><br><span class="line">	<span class="keyword">ELSE</span> <span class="string">'其它药品'</span></span><br><span class="line"><span class="keyword">END</span>)</span><br><span class="line"><span class="keyword">from</span> xs</span><br></pre></td></tr></table></figure>
+
+<h4 id="2．在学校学籍管理系统中，有三个相关的数据表，分别是学生-Student-、课程表（Course）-和成绩表-Score-。其中三个表的主键分别是Student-id-、Course-id、-Score-id。要求输出选修-“数据库技术与应用”-课程（Course-name）学生的学号（Student-id）、姓名（stu-name）、考试成绩（course-score），并按照降序排列；（5分）"><a href="#2．在学校学籍管理系统中，有三个相关的数据表，分别是学生-Student-、课程表（Course）-和成绩表-Score-。其中三个表的主键分别是Student-id-、Course-id、-Score-id。要求输出选修-“数据库技术与应用”-课程（Course-name）学生的学号（Student-id）、姓名（stu-name）、考试成绩（course-score），并按照降序排列；（5分）" class="headerlink" title="2．在学校学籍管理系统中，有三个相关的数据表，分别是学生(Student)、课程表（Course）)和成绩表(Score)。其中三个表的主键分别是Student_id 、Course_id、 Score_id。要求输出选修 “数据库技术与应用” 课程（Course_name）学生的学号（Student_id）、姓名（stu_name）、考试成绩（course_score），并按照降序排列；（5分）"></a>2．在学校学籍管理系统中，有三个相关的数据表，分别是学生(Student)、课程表（Course）)和成绩表(Score)。其中三个表的主键分别是Student_id 、Course_id、 Score_id。要求输出选修 “数据库技术与应用” 课程（Course_name）学生的学号（Student_id）、姓名（stu_name）、考试成绩（course_score），并按照降序排列；（5分）</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--注意：用了综合题的例子!需要修改值</span></span><br><span class="line"><span class="keyword">SELECT</span> b.cname,a.sno,a.sname,c.grade</span><br><span class="line"><span class="keyword">FROM</span> Student <span class="keyword">AS</span> a,Course <span class="keyword">AS</span> b,Score <span class="keyword">AS</span> c</span><br><span class="line"><span class="keyword">WHERE</span> b.cname=<span class="string">'数据库技术与应用'</span><span class="keyword">AND</span> a.sno=c.scno <span class="keyword">AND</span> b.cno=c.cno</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> grade <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3．查询“数据库技术与应用”课程考试成绩超过平均值的所有学生的学号、姓名、班级、课程名称、成绩，并按照成绩降序排列。（6）"><a href="#3．查询“数据库技术与应用”课程考试成绩超过平均值的所有学生的学号、姓名、班级、课程名称、成绩，并按照成绩降序排列。（6）" class="headerlink" title="3．查询“数据库技术与应用”课程考试成绩超过平均值的所有学生的学号、姓名、班级、课程名称、成绩，并按照成绩降序排列。（6）"></a>3．查询“数据库技术与应用”课程考试成绩超过平均值的所有学生的学号、姓名、班级、课程名称、成绩，并按照成绩降序排列。（6）</h4><p>Student(sno、sname、sage、ssex、sclass);</p>
+<p>Course(cno、cname、credit、teacher);</p>
+<p>Score(scno、cno、sage、grade);</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--注意：用了综合题的例子!需要修改值</span></span><br><span class="line"><span class="keyword">SELECT</span> b.cname,a.sno,a.sname,c.grade</span><br><span class="line"><span class="keyword">FROM</span> Student <span class="keyword">AS</span> a,Course <span class="keyword">AS</span> b,Score <span class="keyword">AS</span> c</span><br><span class="line"><span class="keyword">WHERE</span> b.cname=<span class="string">'数据库技术与应用'</span><span class="keyword">AND</span> a.sno=c.scno <span class="keyword">AND</span> b.cno=c.cno</span><br><span class="line"><span class="keyword">AND</span> c.grade&gt;(</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(Score.grade) </span><br><span class="line"><span class="keyword">FROM</span> Score,Course </span><br><span class="line"><span class="keyword">WHERE</span> cname=<span class="string">'数据库技术与应用'</span> <span class="keyword">AND</span> Score.cno=Course.cno</span><br><span class="line">)</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> grade <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+<h3 id="五、综合题（2题，共30分）"><a href="#五、综合题（2题，共30分）" class="headerlink" title="五、综合题（2题，共30分）"></a>五、综合题（2题，共30分）</h3><h4 id="1．利用T-SQL语言编写程序，求1-2-3-4-…-100-；（10分）"><a href="#1．利用T-SQL语言编写程序，求1-2-3-4-…-100-；（10分）" class="headerlink" title="1．利用T-SQL语言编写程序，求1+2!+3!+4!+…..+100!；（10分）"></a>1．利用T-SQL语言编写程序，求1+2!+3!+4!+…..+100!；（10分）</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--注意：1+2!+3!+4!+…..+10!</span></span><br><span class="line"><span class="keyword">Declare</span> @s <span class="built_in">int</span>, @i <span class="built_in">int</span>,@sumi <span class="built_in">int</span></span><br><span class="line"><span class="keyword">Select</span> @s=<span class="number">1</span>,@i=<span class="number">1</span>,@sumi=<span class="number">0</span></span><br><span class="line"><span class="keyword">WHILE</span> @i&lt;<span class="number">11</span> <span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SET</span> @s=@s*@i</span><br><span class="line"><span class="keyword">SET</span>	@sumi+=@s</span><br><span class="line"><span class="keyword">SET</span> @i+=<span class="number">1</span></span><br><span class="line"><span class="keyword">END</span></span><br><span class="line">Print @sumi</span><br></pre></td></tr></table></figure>
+
+<h4 id="2．设计和编写一个学生学籍管理系统的数据库，假设学生、课程、成绩和老师的数据库关系如下：（20分）"><a href="#2．设计和编写一个学生学籍管理系统的数据库，假设学生、课程、成绩和老师的数据库关系如下：（20分）" class="headerlink" title="2．设计和编写一个学生学籍管理系统的数据库，假设学生、课程、成绩和老师的数据库关系如下：（20分）"></a>2．设计和编写一个学生学籍管理系统的数据库，假设学生、课程、成绩和老师的数据库关系如下：（20分）</h4><p>1.Student(sno、sname、sage、ssex、sclass);</p>
+<p>2.Course(cno、cname、credit、pubic、author);</p>
+<p>3.Score(scno、cno、sage、grade);</p>
+<p>4.Teacher(tno、tname、tsex、tage)</p>
+<p>  用T-SQL语言实现以下功能：</p>
+<p>（1）  根据E-R图，构造其关系图；</p>
+<p>（2）  用T-SQL编写创建数据结构表，制定主健（PK）和外健（FK）的字段名；</p>
+<p>（3）  求张老师教的“数据库技术与应用”课程的平均成绩；</p>
+<p>（4）  求选修张老师课程的学生清单；</p>
+<p>（5） 求选修张老师课程的学生成绩清单；</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建数据表</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dbo.Student(</span><br><span class="line">	sno <span class="built_in">INT</span> <span class="keyword">CONSTRAINT</span> PK_Student PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">	sname <span class="built_in">VARCHAR</span>(<span class="number">50</span>), </span><br><span class="line">	sage <span class="built_in">INT</span>,</span><br><span class="line">	ssex <span class="built_in">CHAR</span>(<span class="number">2</span>),</span><br><span class="line">	sclass <span class="built_in">VARCHAR</span>(<span class="number">50</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dbo.Course(</span><br><span class="line">	cno <span class="built_in">INT</span> <span class="keyword">CONSTRAINT</span> PK_Course PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">	cname <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	credit <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	pubic <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	author <span class="built_in">VARCHAR</span>(<span class="number">50</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dbo.Score(</span><br><span class="line">	scno <span class="built_in">INT</span> <span class="keyword">CONSTRAINT</span> FK_Student <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span>(scno) <span class="keyword">REFERENCES</span> Student(sno),</span><br><span class="line">	cno <span class="built_in">INT</span> <span class="keyword">CONSTRAINT</span> FK_Course <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span>(cno) <span class="keyword">REFERENCES</span> Course(cno),</span><br><span class="line">	grade <span class="built_in">FLOAT</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dbo.Teacher(</span><br><span class="line">	tno <span class="built_in">INT</span> <span class="keyword">CONSTRAINT</span> PK_Teacher PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">	tname <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	tsex <span class="built_in">CHAR</span>(<span class="number">2</span>),</span><br><span class="line">	tage <span class="built_in">INT</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">--添加数据</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Student(sno,sname,sage,ssex,sclass) </span><br><span class="line"><span class="keyword">values</span> (<span class="number">1</span>,<span class="string">'小超'</span>,<span class="number">23</span>,<span class="string">'男'</span>,<span class="string">'软专1901'</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">'小王'</span>,<span class="number">23</span>,<span class="string">'男'</span>,<span class="string">'软专1902'</span>),</span><br><span class="line">(<span class="number">3</span>,<span class="string">'小芳'</span>,<span class="number">23</span>,<span class="string">'女'</span>,<span class="string">'软专1902'</span>),</span><br><span class="line">(<span class="number">4</span>,<span class="string">'小胡'</span>,<span class="number">23</span>,<span class="string">'男'</span>,<span class="string">'软专1901'</span>),</span><br><span class="line">(<span class="number">5</span>,<span class="string">'小红'</span>,<span class="number">22</span>,<span class="string">'女'</span>,<span class="string">'软专1903'</span>),</span><br><span class="line">(<span class="number">6</span>,<span class="string">'小花'</span>,<span class="number">22</span>,<span class="string">'女'</span>,<span class="string">'软专1903'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Teacher(tno,tname,tsex,tage) </span><br><span class="line"><span class="keyword">values</span> (<span class="number">1</span>,<span class="string">'吴军'</span>,<span class="string">'男'</span>,<span class="number">33</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">'刘艳'</span>,<span class="string">'男'</span>,<span class="number">33</span>),</span><br><span class="line">(<span class="number">3</span>,<span class="string">'马红'</span>,<span class="string">'女'</span>,<span class="number">31</span>),</span><br><span class="line">(<span class="number">4</span>,<span class="string">'李白'</span>,<span class="string">'男'</span>,<span class="number">28</span>),</span><br><span class="line">(<span class="number">5</span>,<span class="string">'杜甫'</span>,<span class="string">'男'</span>,<span class="number">35</span>),</span><br><span class="line">(<span class="number">6</span>,<span class="string">'张老师'</span>,<span class="string">'女'</span>,<span class="number">44</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Course(cno,cname,credit,pubic,author) </span><br><span class="line"><span class="keyword">values</span> (<span class="number">1</span>,<span class="string">'数据库技术与应用'</span>,<span class="string">'学习数据库'</span>,<span class="string">'123'</span>,<span class="string">'张老师'</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">'JavaScript'</span>,<span class="string">'学习js'</span>,<span class="string">'123'</span>,<span class="string">'王艳'</span>),</span><br><span class="line">(<span class="number">3</span>,<span class="string">'C'</span>,<span class="string">'学习c'</span>,<span class="string">'123'</span>,<span class="string">'杜甫'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Score(scno,cno,grade) </span><br><span class="line"><span class="keyword">values</span> (<span class="number">1</span>,<span class="number">1</span>,<span class="number">100</span>),(<span class="number">1</span>,<span class="number">2</span>,<span class="number">100</span>),(<span class="number">1</span>,<span class="number">3</span>,<span class="number">100</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="number">1</span>,<span class="number">90</span>),(<span class="number">2</span>,<span class="number">2</span>,<span class="number">90</span>),(<span class="number">2</span>,<span class="number">3</span>,<span class="number">67</span>),</span><br><span class="line">(<span class="number">3</span>,<span class="number">1</span>,<span class="number">60</span>),(<span class="number">3</span>,<span class="number">2</span>,<span class="number">72</span>),(<span class="number">3</span>,<span class="number">3</span>,<span class="number">90</span>),</span><br><span class="line">(<span class="number">4</span>,<span class="number">1</span>,<span class="number">70</span>),(<span class="number">4</span>,<span class="number">2</span>,<span class="number">88</span>),(<span class="number">4</span>,<span class="number">3</span>,<span class="number">78</span>),</span><br><span class="line">(<span class="number">5</span>,<span class="number">1</span>,<span class="number">88</span>),(<span class="number">5</span>,<span class="number">2</span>,<span class="number">45</span>),(<span class="number">5</span>,<span class="number">3</span>,<span class="number">76</span>),</span><br><span class="line">(<span class="number">6</span>,<span class="number">1</span>,<span class="number">86</span>),(<span class="number">6</span>,<span class="number">2</span>,<span class="number">88</span>),(<span class="number">6</span>,<span class="number">3</span>,<span class="number">81</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--求张老师教的“数据库技术与应用”课程的平均成绩</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(grade) <span class="keyword">AS</span> 数据库技术与应用平均成绩</span><br><span class="line"><span class="keyword">FROM</span> Score </span><br><span class="line"><span class="keyword">WHERE</span> Score.cno=<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--求选修张老师课程的学生清单</span></span><br><span class="line"><span class="keyword">SELECT</span> a.sno,a.sname,a.sage,a.ssex,a.sclass,b.author</span><br><span class="line"><span class="keyword">FROM</span> Student <span class="keyword">AS</span> a,Course <span class="keyword">AS</span> b</span><br><span class="line"><span class="keyword">WHERE</span> b.author=<span class="string">'张老师'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--求选修张老师课程的学生成绩清单</span></span><br><span class="line"><span class="keyword">SELECT</span> a.sno,a.sname,a.sage,a.ssex,a.sclass,b.author,c.grade</span><br><span class="line"><span class="keyword">FROM</span> Student <span class="keyword">AS</span> a,Course <span class="keyword">AS</span> b,Score <span class="keyword">AS</span> c</span><br><span class="line"><span class="keyword">WHERE</span> b.author=<span class="string">'张老师'</span><span class="keyword">AND</span> a.sno=c.scno <span class="keyword">AND</span> b.cno=c.cno</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/SQLserver%E5%A4%8D%E4%B9%A0%E9%A2%98/" rel="tag"># SQLserver复习题</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/27/HTML%E5%9F%BA%E7%A1%80-%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E4%BD%9C%E4%B8%9A/" rel="prev" title="网页设计作业">
+      <i class="fa fa-chevron-left"></i> 网页设计作业
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/08/%E5%8D%9A%E5%AE%A2-%E5%9C%A8%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E7%9A%84%E9%83%A8%E7%BD%B2%E6%B5%8B%E8%AF%95/" rel="next" title="在新电脑上的部署测试">
+      在新电脑上的部署测试 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、填空题（每题1分，共15分）"><span class="nav-number">1.</span> <span class="nav-text">一、填空题（每题1分，共15分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、选择题（每题2分，共24分）"><span class="nav-number">2.</span> <span class="nav-text">二、选择题（每题2分，共24分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、基本操作题（每小题5分，共15分）"><span class="nav-number">3.</span> <span class="nav-text">三、基本操作题（每小题5分，共15分）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1．在学生数据表（student）中，表中有学号-sno-、姓名-sname-、性别-sex-、年龄-sage-、班级（Class）字段，写出T-SQL语言的插入操作命令，其中学号为’1005’，姓名叫’王芳’，年龄20岁，性别的女的同学信息。"><span class="nav-number">3.1.</span> <span class="nav-text">1．在学生数据表（student）中，表中有学号(sno)、姓名(sname)、性别(sex)、年龄(sage)、班级（Class）字段，写出T-SQL语言的插入操作命令，其中学号为’1005’，姓名叫’王芳’，年龄20岁，性别的女的同学信息。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2．有一学生数据表为student，数据结构与上题想通过，写出T-SQL语言的修改操作命令，同时将王芳同学的年龄与班级修改为“22岁”和“2012级自动化1班-”。"><span class="nav-number">3.2.</span> <span class="nav-text">2．有一学生数据表为student，数据结构与上题想通过，写出T-SQL语言的修改操作命令，同时将王芳同学的年龄与班级修改为“22岁”和“2012级自动化1班 ”。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3．用T-SQL语言编写创建一个教师数据表，内容包括教师编号（Tid），长度10位，教师名（Tname），4个汉字、性别（Sex），1个汉字，所在学院（Academy），50个汉字长度，以教师编号作为主键。"><span class="nav-number">3.3.</span> <span class="nav-text">3．用T-SQL语言编写创建一个教师数据表，内容包括教师编号（Tid），长度10位，教师名（Tname），4个汉字、性别（Sex），1个汉字，所在学院（Academy），50个汉字长度，以教师编号作为主键。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、编程题（3小题，共16分）"><span class="nav-number">4.</span> <span class="nav-text">四、编程题（3小题，共16分）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1．在药品销售表-xs-中，数据结构有药品名称（ypmc）-药品类别（lb），药品数量（sl）等字段，其中药品类别数据存放是76、77、78、空值，分别表示“处方药品”、“非处方药品”、“医疗器械”，“其它药品”。请写出药品数据查询命令，并要求将药品类别编码数据一次性转换为可读文本数据。（5分）"><span class="nav-number">4.1.</span> <span class="nav-text">1．在药品销售表(xs)中，数据结构有药品名称（ypmc）,药品类别（lb），药品数量（sl）等字段，其中药品类别数据存放是76、77、78、空值，分别表示“处方药品”、“非处方药品”、“医疗器械”，“其它药品”。请写出药品数据查询命令，并要求将药品类别编码数据一次性转换为可读文本数据。（5分）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2．在学校学籍管理系统中，有三个相关的数据表，分别是学生-Student-、课程表（Course）-和成绩表-Score-。其中三个表的主键分别是Student-id-、Course-id、-Score-id。要求输出选修-“数据库技术与应用”-课程（Course-name）学生的学号（Student-id）、姓名（stu-name）、考试成绩（course-score），并按照降序排列；（5分）"><span class="nav-number">4.2.</span> <span class="nav-text">2．在学校学籍管理系统中，有三个相关的数据表，分别是学生(Student)、课程表（Course）)和成绩表(Score)。其中三个表的主键分别是Student_id 、Course_id、 Score_id。要求输出选修 “数据库技术与应用” 课程（Course_name）学生的学号（Student_id）、姓名（stu_name）、考试成绩（course_score），并按照降序排列；（5分）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3．查询“数据库技术与应用”课程考试成绩超过平均值的所有学生的学号、姓名、班级、课程名称、成绩，并按照成绩降序排列。（6）"><span class="nav-number">4.3.</span> <span class="nav-text">3．查询“数据库技术与应用”课程考试成绩超过平均值的所有学生的学号、姓名、班级、课程名称、成绩，并按照成绩降序排列。（6）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、综合题（2题，共30分）"><span class="nav-number">5.</span> <span class="nav-text">五、综合题（2题，共30分）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1．利用T-SQL语言编写程序，求1-2-3-4-…-100-；（10分）"><span class="nav-number">5.1.</span> <span class="nav-text">1．利用T-SQL语言编写程序，求1+2!+3!+4!+…..+100!；（10分）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2．设计和编写一个学生学籍管理系统的数据库，假设学生、课程、成绩和老师的数据库关系如下：（20分）"><span class="nav-number">5.2.</span> <span class="nav-text">2．设计和编写一个学生学籍管理系统的数据库，假设学生、课程、成绩和老师的数据库关系如下：（20分）</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ash"
+      src="/images/header.jpg">
+  <p class="site-author-name" itemprop="name">Ash</p>
+  <div class="site-description" itemprop="description">在校生的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiaochaha" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiaochaha" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备18001617号 </a>
+      <img src="/images/备案图标.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33028202000369" rel="noopener" target="_blank">浙公网安备 33028202000369号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ash</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.6.0
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(() => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '6b13a806cf775d3765b4',
+      clientSecret: '113f6b56926b9d30add11e28192840269aa84be9',
+      repo: 'xiaochaha.github.io',
+      owner: 'xiaochaha',
+      admin: ['xiaochaha'],
+      id: '96bb8ac74a0770a44069a004d663f1c0',
+        language: '',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
