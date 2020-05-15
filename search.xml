@@ -340,12 +340,27 @@
       </tags>
   </entry>
   <entry>
-    <title>个人-简单聊聊</title>
-    <url>/2020/04/19/%E4%B8%AA%E4%BA%BA-%E7%AE%80%E5%8D%95%E8%81%8A%E8%81%8A/</url>
-    <content><![CDATA[<p>最近，一直在家中，好久没有更新了，接下来会慢慢更新。同时自己也在准备考研，加油！</p>
-]]></content>
+    <title>IDEA搭建Struts2环境</title>
+    <url>/2020/05/10/JavaWEB%E5%9F%BA%E7%A1%80-IDEA%E6%90%AD%E5%BB%BAStruts2%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h1 id="IDEA搭建Struts2环境"><a href="#IDEA搭建Struts2环境" class="headerlink" title="IDEA搭建Struts2环境"></a>IDEA搭建Struts2环境</h1><h3 id="首先你要有IDEA、Struts2官网下载的包"><a href="#首先你要有IDEA、Struts2官网下载的包" class="headerlink" title="首先你要有IDEA、Struts2官网下载的包"></a>首先你要有IDEA、Struts2官网下载的包</h3><img src="http://q950sl5kp.bkt.clouddn.com/static/images/20200421-1.png">
+
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><img src="http://q950sl5kp.bkt.clouddn.com/static/images/20200421-2.png">
+
+<h2 id="加载包"><a href="#加载包" class="headerlink" title="加载包"></a>加载包</h2><img src="http://q950sl5kp.bkt.clouddn.com/static/images/20200421-3.png">
+
+<h2 id="配置tomcat"><a href="#配置tomcat" class="headerlink" title="配置tomcat"></a>配置tomcat</h2><img src="http://q950sl5kp.bkt.clouddn.com/static/images/20200421-4.png">
+
+<h3 id="注意：如果有提示fix就fix"><a href="#注意：如果有提示fix就fix" class="headerlink" title="注意：如果有提示fix就fix"></a>注意：如果有提示fix就fix</h3><p>web.xml</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;web-app xmlns&#x3D;&quot;http:&#x2F;&#x2F;xmlns.jcp.org&#x2F;xml&#x2F;ns&#x2F;javaee&quot;</span><br><span class="line">         xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;xmlns.jcp.org&#x2F;xml&#x2F;ns&#x2F;javaee http:&#x2F;&#x2F;xmlns.jcp.org&#x2F;xml&#x2F;ns&#x2F;javaee&#x2F;web-app_4_0.xsd&quot;</span><br><span class="line">         version&#x3D;&quot;4.0&quot;&gt;</span><br><span class="line">    &lt;filter&gt;</span><br><span class="line">        &lt;filter-name&gt;struts2&lt;&#x2F;filter-name&gt;</span><br><span class="line">        &lt;filter-class&gt;org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter&lt;&#x2F;filter-class&gt;</span><br><span class="line">    &lt;&#x2F;filter&gt;</span><br><span class="line">    &lt;filter-mapping&gt;</span><br><span class="line">        &lt;filter-name&gt;struts2&lt;&#x2F;filter-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;&#x2F;*&lt;&#x2F;url-pattern&gt;</span><br><span class="line">    &lt;&#x2F;filter-mapping&gt;</span><br><span class="line">&lt;&#x2F;web-app&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><img src="http://q950sl5kp.bkt.clouddn.com/static/images/20200421-5.png">]]></content>
+      <categories>
+        <category>JavaWEB</category>
+      </categories>
       <tags>
-        <tag>个人</tag>
+        <tag>实战</tag>
+        <tag>Struts2</tag>
+        <tag>IDEA</tag>
       </tags>
   </entry>
   <entry>
@@ -401,80 +416,13 @@
       </tags>
   </entry>
   <entry>
-    <title>出大事情</title>
-    <url>/2019/11/30/%E5%8D%9A%E5%AE%A2-%E5%87%BA%E5%A4%A7%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>不备份的结果就是重新部署</p>
-<p>慢慢更新</p>
+    <title>个人-简单聊聊</title>
+    <url>/2020/04/19/%E4%B8%AA%E4%BA%BA-%E7%AE%80%E5%8D%95%E8%81%8A%E8%81%8A/</url>
+    <content><![CDATA[<p>最近，一直在家中，好久没有更新了，接下来会慢慢更新。同时自己也在准备考研，加油！</p>
 ]]></content>
-      <categories>
-        <category>自我</category>
-      </categories>
       <tags>
-        <tag>关于blog</tag>
+        <tag>个人</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>IDEA搭建Struts2环境</title>
-    <url>/2020/05/10/JavaWEB%E5%9F%BA%E7%A1%80-IDEA%E6%90%AD%E5%BB%BAStruts2%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h1 id="IDEA搭建Struts2环境"><a href="#IDEA搭建Struts2环境" class="headerlink" title="IDEA搭建Struts2环境"></a>IDEA搭建Struts2环境</h1><h3 id="首先你要有IDEA、Struts2官网下载的包"><a href="#首先你要有IDEA、Struts2官网下载的包" class="headerlink" title="首先你要有IDEA、Struts2官网下载的包"></a>首先你要有IDEA、Struts2官网下载的包</h3><img src="http://q950sl5kp.bkt.clouddn.com/static/images/20200421-1.png">
-
-<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><img src="http://q950sl5kp.bkt.clouddn.com/static/images/20200421-2.png">
-
-<h2 id="加载包"><a href="#加载包" class="headerlink" title="加载包"></a>加载包</h2><img src="http://q950sl5kp.bkt.clouddn.com/static/images/20200421-3.png">
-
-<h2 id="配置tomcat"><a href="#配置tomcat" class="headerlink" title="配置tomcat"></a>配置tomcat</h2><img src="http://q950sl5kp.bkt.clouddn.com/static/images/20200421-4.png">
-
-<h3 id="注意：如果有提示fix就fix"><a href="#注意：如果有提示fix就fix" class="headerlink" title="注意：如果有提示fix就fix"></a>注意：如果有提示fix就fix</h3><p>web.xml</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;web-app xmlns&#x3D;&quot;http:&#x2F;&#x2F;xmlns.jcp.org&#x2F;xml&#x2F;ns&#x2F;javaee&quot;</span><br><span class="line">         xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;xmlns.jcp.org&#x2F;xml&#x2F;ns&#x2F;javaee http:&#x2F;&#x2F;xmlns.jcp.org&#x2F;xml&#x2F;ns&#x2F;javaee&#x2F;web-app_4_0.xsd&quot;</span><br><span class="line">         version&#x3D;&quot;4.0&quot;&gt;</span><br><span class="line">    &lt;filter&gt;</span><br><span class="line">        &lt;filter-name&gt;struts2&lt;&#x2F;filter-name&gt;</span><br><span class="line">        &lt;filter-class&gt;org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter&lt;&#x2F;filter-class&gt;</span><br><span class="line">    &lt;&#x2F;filter&gt;</span><br><span class="line">    &lt;filter-mapping&gt;</span><br><span class="line">        &lt;filter-name&gt;struts2&lt;&#x2F;filter-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;&#x2F;*&lt;&#x2F;url-pattern&gt;</span><br><span class="line">    &lt;&#x2F;filter-mapping&gt;</span><br><span class="line">&lt;&#x2F;web-app&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><img src="http://q950sl5kp.bkt.clouddn.com/static/images/20200421-5.png">]]></content>
-      <categories>
-        <category>JavaWEB</category>
-      </categories>
-      <tags>
-        <tag>实战</tag>
-        <tag>Struts2</tag>
-        <tag>IDEA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>创建分支</title>
-    <url>/2019/12/04/%E5%8D%9A%E5%AE%A2-%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF/</url>
-    <content><![CDATA[<p>把源码上传到分支上，这样就不用怕了。</p>
-<p><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">推荐阅读</a></p>
-]]></content>
-      <categories>
-        <category>自我</category>
-      </categories>
-      <tags>
-        <tag>关于blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客更新日记</title>
-    <url>/2019/12/07/%E5%8D%9A%E5%AE%A2-%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E6%97%A5%E8%AE%B0/</url>
-    <content><![CDATA[<p>更新到了next7.6.0版本，配置很简单</p>
-<p>参考<a href="https://pisces.theme-next.org/" target="_blank" rel="noopener">next手册</a></p>
-<p>接下来就是正常内容更新了。</p>
-]]></content>
-      <categories>
-        <category>自我</category>
-      </categories>
-      <tags>
-        <tag>关于blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在新电脑上的部署测试</title>
-    <url>/2020/02/08/%E5%8D%9A%E5%AE%A2-%E5%9C%A8%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E7%9A%84%E9%83%A8%E7%BD%B2%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>在新电脑的部署测试</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/11/29/%E5%8D%9A%E5%AE%A2-helloworld/</url>
-    <content><![CDATA[<p>Hello World! </p>
-]]></content>
   </entry>
   <entry>
     <title>数据库SQLserver复习题</title>
@@ -700,6 +648,58 @@
         <tag>Java基础题</tag>
         <tag>‘校内’</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/11/29/%E5%8D%9A%E5%AE%A2-helloworld/</url>
+    <content><![CDATA[<p>Hello World! </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>博客更新日记</title>
+    <url>/2019/12/07/%E5%8D%9A%E5%AE%A2-%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<p>更新到了next7.6.0版本，配置很简单</p>
+<p>参考<a href="https://pisces.theme-next.org/" target="_blank" rel="noopener">next手册</a></p>
+<p>接下来就是正常内容更新了。</p>
+]]></content>
+      <categories>
+        <category>自我</category>
+      </categories>
+      <tags>
+        <tag>关于blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>出大事情</title>
+    <url>/2019/11/30/%E5%8D%9A%E5%AE%A2-%E5%87%BA%E5%A4%A7%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>不备份的结果就是重新部署</p>
+<p>慢慢更新</p>
+]]></content>
+      <categories>
+        <category>自我</category>
+      </categories>
+      <tags>
+        <tag>关于blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>创建分支</title>
+    <url>/2019/12/04/%E5%8D%9A%E5%AE%A2-%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF/</url>
+    <content><![CDATA[<p>把源码上传到分支上，这样就不用怕了。</p>
+<p><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">推荐阅读</a></p>
+]]></content>
+      <categories>
+        <category>自我</category>
+      </categories>
+      <tags>
+        <tag>关于blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在新电脑上的部署测试</title>
+    <url>/2020/02/08/%E5%8D%9A%E5%AE%A2-%E5%9C%A8%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E7%9A%84%E9%83%A8%E7%BD%B2%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>在新电脑的部署测试</p>
+]]></content>
   </entry>
   <entry>
     <title>PTA- 基础编程题目集</title>
