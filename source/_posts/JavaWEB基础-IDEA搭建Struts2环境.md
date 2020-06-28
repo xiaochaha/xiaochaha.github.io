@@ -12,19 +12,19 @@ mathjax: true
 
 ### 首先你要有IDEA、Struts2官网下载的包
 
-{% qnimg 20200421-1.png %}
+
 
 ## 创建
 
-{% qnimg 20200421-2.png %}
+
 
 ## 加载包
 
-{% qnimg 20200421-3.png %}
+
 
 ## 配置tomcat
 
-{% qnimg 20200421-4.png %}
+
 
 ### 注意：如果有提示fix就fix
 
@@ -49,4 +49,3 @@ web.xml
 
 ## 运行
 
-{% qnimg 20200421-5.png %}
