@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ashtime.net/"/>
-  <updated>2020-06-28T08:32:48.046Z</updated>
+  <updated>2020-06-15T08:12:46.153Z</updated>
   <id>http://ashtime.net/</id>
   
   <author>
@@ -15,53 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test1</title>
-    <link href="http://ashtime.net/2020/06/28/test1/"/>
-    <id>http://ashtime.net/2020/06/28/test1/</id>
-    <published>2020-06-28T08:15:32.000Z</published>
-    <updated>2020-06-28T08:32:48.046Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2020/06/28/test1/20200516-1.png" alt></p><p>test1</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/2020/06/28/test1/20200516-1.png&quot; alt&gt;&lt;/p&gt;
-&lt;p&gt;test1&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://ashtime.net/2020/06/28/test/"/>
-    <id>http://ashtime.net/2020/06/28/test/</id>
-    <published>2020-06-28T07:33:47.000Z</published>
-    <updated>2020-06-28T07:37:29.915Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/.net//test%5C20200421-1.png" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/.net//test%5C20200421-1.png&quot; alt&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>OC-复习</title>

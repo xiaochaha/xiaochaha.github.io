@@ -227,205 +227,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://ashtime.net/2020/06/01/%E5%88%B7%E9%A2%98-PAT%E4%B9%99%E7%BA%A7-1003/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.jpg">
-      <meta itemprop="name" content="Ash">
-      <meta itemprop="description" content="在校生的个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ashtime">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/01/%E5%88%B7%E9%A2%98-PAT%E4%B9%99%E7%BA%A7-1003/" class="post-title-link" itemprop="url">PAT乙级-1003-我要通过！</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-01 18:25:21" itemprop="dateCreated datePublished" datetime="2020-06-01T18:25:21+08:00">2020-06-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-03 07:51:42" itemprop="dateModified" datetime="2020-06-03T07:51:42+08:00">2020-06-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/" itemprop="url" rel="index">
-                    <span itemprop="name">c++</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1003-我要通过！-20分"><a href="#1003-我要通过！-20分" class="headerlink" title="1003 我要通过！ (20分)"></a>1003 我要通过！ (20分)</h3><blockquote>
-<p>“<strong>答案正确</strong>”是自动判题系统给出的最令人欢喜的回复。本题属于 PAT 的“<strong>答案正确</strong>”大派送 —— 只要读入的字符串满足下列条件，系统就输出“<strong>答案正确</strong>”，否则输出“<strong>答案错误</strong>”。</p>
-<p>得到“<strong>答案正确</strong>”的条件是：</p>
-<ol>
-<li>字符串中必须仅有 <code>P</code>、 <code>A</code>、 <code>T</code>这三种字符，不可以包含其它字符；</li>
-<li>任意形如 <code>xPATx</code> 的字符串都可以获得“<strong>答案正确</strong>”，其中 <code>x</code> 或者是空字符串，或者是仅由字母 <code>A</code> 组成的字符串；</li>
-<li>如果 <code>aPbTc</code> 是正确的，那么 <code>aPbATca</code> 也是正确的，其中 <code>a</code>、 <code>b</code>、 <code>c</code> 均或者是空字符串，或者是仅由字母 <code>A</code> 组成的字符串。</li>
-</ol>
-<p>现在就请你为 PAT 写一个自动裁判程序，判定哪些字符串是可以获得“<strong>答案正确</strong>”的。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个测试输入包含 1 个测试用例。第 1 行给出一个正整数 <em>n</em> (&lt;10)，是需要检测的字符串个数。接下来每个字符串占一行，字符串长度不超过 100，且不包含空格。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>每个字符串的检测结果占一行，如果该字符串可以获得“<strong>答案正确</strong>”，则输出 <code>YES</code>，否则输出 <code>NO</code>。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">8</span><br><span class="line">PAT</span><br><span class="line">PAAT</span><br><span class="line">AAPATAA</span><br><span class="line">AAPAATAAAA</span><br><span class="line">xPATx</span><br><span class="line">PT</span><br><span class="line">Whatever</span><br><span class="line">APAAATAA</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">YES</span><br><span class="line">YES</span><br><span class="line">YES</span><br><span class="line">YES</span><br><span class="line">NO</span><br><span class="line">NO</span><br><span class="line">NO</span><br><span class="line">NO</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>这题的难点在于看懂题目：</p>
-<p>第一点：不能有PTA其他的字符。</p>
-<p>第二点：PAT两侧有A或没有是正确的。</p>
-<p>第三点：当APATA正确时，可以APAATAA。</p>
-<p>可以看出来，主要是A的问题。</p>
-<blockquote>
-<p>只能有一个P一个T，中间末尾和开头可以随便插入A。但是必须满足开头的A的个数 * 中间的A的个数 = 结尾的A的个数，而且P和T之间不能没有A</p>
-</blockquote>
-<h4 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n; <span class="keyword">int</span> k; </span><br><span class="line">	<span class="keyword">int</span> p; <span class="keyword">int</span> t;</span><br><span class="line">	<span class="keyword">int</span> a,a1, a2, a3;</span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="built_in">string</span> str;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; str;</span><br><span class="line">		a=a1 = a2 = a3 = p = t = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; str.length(); j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (str[j]==<span class="string">'A'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				flag = <span class="number">1</span>;</span><br><span class="line">				a++;</span><br><span class="line">				<span class="keyword">if</span> (p==<span class="number">0</span>&amp;&amp;t==<span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					a1++;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (p != <span class="number">0</span> &amp;&amp; t == <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					a2++;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (t != <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					a3++;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (str[j] == <span class="string">'P'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				p++;</span><br><span class="line">				flag = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (str[j] == <span class="string">'T'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				t++;</span><br><span class="line">				flag = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				flag = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (flag != <span class="number">0</span> &amp;&amp; a1 * a2 == a3 &amp;&amp; p == <span class="number">1</span> &amp;&amp; t == <span class="number">1</span> &amp;&amp; a &gt;= <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">			</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>难度3</p>
-<p>参考柳神（柳婼）的代码可以改进一下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, p = <span class="number">0</span>, t = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; s.<span class="built_in">size</span>(); j++) &#123;</span><br><span class="line">            m[s[j]]++;</span><br><span class="line">            <span class="keyword">if</span> (s[j] == <span class="string">'P'</span>) p = j;</span><br><span class="line">            <span class="keyword">if</span> (s[j] == <span class="string">'T'</span>) t = j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (m[<span class="string">'P'</span>] == <span class="number">1</span> &amp;&amp; m[<span class="string">'A'</span>] != <span class="number">0</span> &amp;&amp; m[<span class="string">'T'</span>] == <span class="number">1</span> &amp;&amp; m.<span class="built_in">size</span>() == <span class="number">3</span> &amp;&amp; t-p != <span class="number">1</span> &amp;&amp; p * (t-p<span class="number">-1</span>) == s.length()-t<span class="number">-1</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://ashtime.net/2020/05/31/%E5%88%B7%E9%A2%98-PAT%E4%B9%99%E7%BA%A7-1002/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.jpg">
-      <meta itemprop="name" content="Ash">
-      <meta itemprop="description" content="在校生的个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ashtime">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/31/%E5%88%B7%E9%A2%98-PAT%E4%B9%99%E7%BA%A7-1002/" class="post-title-link" itemprop="url">PAT乙级-1002-写出这个数</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-31 21:40:51" itemprop="dateCreated datePublished" datetime="2020-05-31T21:40:51+08:00">2020-05-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-01 22:48:56" itemprop="dateModified" datetime="2020-06-01T22:48:56+08:00">2020-06-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/" itemprop="url" rel="index">
-                    <span itemprop="name">c++</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1002-写出这个数-20分"><a href="#1002-写出这个数-20分" class="headerlink" title="1002 写出这个数 (20分)"></a>1002 写出这个数 (20分)</h3><blockquote>
-<p>读入一个正整数 <em>n</em>，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个测试输入包含 1 个测试用例，即给出自然数 <em>n</em> 的值。这里保证 <em>n</em> 小于 10100。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行内输出 <em>n</em> 的各位数字之和的每一位，拼音数字间有 1 空格，但一行中最后一个拼音数字后没有空格。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1234567890987654321123456789</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yi san wu</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>用string接收输入，用sum累加，再将结果转化为拼音输出。</p>
-<h4 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">outcome</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">string</span> nums;</span><br><span class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>; <span class="built_in">string</span> n[<span class="number">100</span>]; <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; nums;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		sum += nums[i]-<span class="string">'0'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (sum!=<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		n[j]=outcome(sum % <span class="number">10</span>);</span><br><span class="line">		sum /= <span class="number">10</span>;</span><br><span class="line">		j++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = j<span class="number">-1</span>; i &gt;=<span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (i==<span class="number">0</span>)<span class="built_in">cout</span> &lt;&lt; n[i];</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; n[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">outcome</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">string</span> str;</span><br><span class="line">	<span class="keyword">switch</span> (n)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">0</span>:str=<span class="string">"ling"</span>; <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:str = <span class="string">"yi"</span>; <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:str = <span class="string">"er"</span>; <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:str = <span class="string">"san"</span>; <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:str = <span class="string">"si"</span>; <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">5</span>:str = <span class="string">"wu"</span>; <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">6</span>:str = <span class="string">"liu"</span>; <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">7</span>:str = <span class="string">"qi"</span>; <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">8</span>:str = <span class="string">"ba"</span>; <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">9</span>:str = <span class="string">"jiu"</span>; <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>难度1</p>
-<p>参考柳神（柳婼）的代码可以改进一下：</p>
-<p>不需要switch代码，中间把sum结果转为字符串在来对应输出。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">string</span> str[<span class="number">10</span>] =  &#123;<span class="string">"ling"</span>, <span class="string">"yi"</span>, <span class="string">"er"</span>, <span class="string">"san"</span>, <span class="string">"si"</span>, <span class="string">"wu"</span>, <span class="string">"liu"</span>, <span class="string">"qi"</span>, <span class="string">"ba"</span>, <span class="string">"jiu"</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)</span><br><span class="line">        sum += (s[i] - <span class="string">'0'</span>);</span><br><span class="line">    <span class="built_in">string</span> num = to_string(sum);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i != <span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; str[num[i] - <span class="string">'0'</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://ashtime.net/2020/05/31/%E5%88%B7%E9%A2%98-PAT%E4%B9%99%E7%BA%A7-1001/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -684,6 +485,231 @@
   
   
 
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ashtime.net/2020/02/08/%E5%8D%9A%E5%AE%A2-%E5%9C%A8%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E7%9A%84%E9%83%A8%E7%BD%B2%E6%B5%8B%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.jpg">
+      <meta itemprop="name" content="Ash">
+      <meta itemprop="description" content="在校生的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ashtime">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/08/%E5%8D%9A%E5%AE%A2-%E5%9C%A8%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E7%9A%84%E9%83%A8%E7%BD%B2%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">在新电脑上的部署测试</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-08 12:32:56" itemprop="dateCreated datePublished" datetime="2020-02-08T12:32:56+08:00">2020-02-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-10 15:21:29" itemprop="dateModified" datetime="2020-05-10T15:21:29+08:00">2020-05-10</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在新电脑的部署测试</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ashtime.net/2020/01/03/SQLServer-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.jpg">
+      <meta itemprop="name" content="Ash">
+      <meta itemprop="description" content="在校生的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ashtime">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/03/SQLServer-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E4%B9%A0%E9%A2%98/" class="post-title-link" itemprop="url">数据库SQLserver复习题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-03 20:30:52" itemprop="dateCreated datePublished" datetime="2020-01-03T20:30:52+08:00">2020-01-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-10 15:21:29" itemprop="dateModified" datetime="2020-05-10T15:21:29+08:00">2020-05-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SQLserver/" itemprop="url" rel="index">
+                    <span itemprop="name">SQLserver</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>数据库sql server复习题，填空由另外一个同学提供，感谢这位同学。<br>答案仅供参考，可能有错</p>
+<h3 id="一、填空题（每题1分，共15分）"><a href="#一、填空题（每题1分，共15分）" class="headerlink" title="一、填空题（每题1分，共15分）"></a>一、填空题（每题1分，共15分）</h3><p>1．二个实体对象之间联系有：<span style="color:red;"><strong>一对一</strong></span>、<span style="color:red;"><strong>一对多</strong></span>和<span style="color:red;"><strong>多对多</strong></span>关联。</p>
+<p>2．数据库管理系统的结构主要有：<span style="color:red;"><strong>外模式</strong></span> 、<span style="color:red;"><strong>概念模式</strong></span>和 <span style="color:red;"><strong>内模式</strong></span>三种。</p>
+<p>3．典型数据模型主要由<span style="color:red;"><strong>层次模型</strong></span> 、<span style="color:red;"><strong>网状模型</strong></span>和<span style="color:red;"><strong>关系模型</strong></span>、<span style="color:red;"><strong>面向对象模型</strong></span>四种。</p>
+<p>4．数据表描述的数据媒体类型有哪几种：<span style="color:red;"><strong>整数、货币、浮点、日期、字符、二进制、图像和文本</strong></span>。</p>
+<p>5．数据完整性主要由、  <span style="color:red;"><strong>实体完整性性</strong></span>     、<span style="color:red;"><strong>域完整性</strong></span>        和  <span style="color:red;"><strong>参照完整性</strong></span>     组成。</p>
+<p>6．SQL Server数据库系统采用验证方式有<span style="color:red;"><strong>Windows身份验证</strong></span>   、<span style="color:red;"><strong>SQL Server身份验证</strong></span>   、<span style="color:red;"><strong>混合验证三种</strong></span>   ；</p>
+<p>7．DBMS就是管理数据库的系统软件，它具有五大功能：<span style="color:red;"><strong>数据的定义   、   数据组织存储和管理  、    数据操纵功能  、    数据库的事务管理和运行管理     、   数据库的建立和维护</strong></span> 。</p>
+<p>8．SQL Server数据库角色由：<span style="color:red;"><strong>服务器角色、客户端角色、自定义角色</strong></span>三种。</p>
+<p>9．在字符串的匹配操作中，通配符   <span style="color:red;"><strong>%</strong></span>  表示包含零个或更多字符的任意字符串。</p>
+<p>10．目前在国内主流的数据库管理系统软件，请你例举五个：<span style="color:red;"><strong>ACCESS</strong></span> 、<span style="color:red;"><strong>SQL Server</strong></span> 、<span style="color:red;"><strong>Oracle</strong></span> 、<span style="color:red;"><strong>MySQL</strong></span>  、<span style="color:red;"><strong>PostgreSQL</strong></span>。</p>
+<p>11．信息与数据的关系<span style="color:red;"><strong>信息通常被认为有一定意义的经过加工的数据.数据是信息的载体，它表示了信息</strong></span>               。</p>
+<p>12．数据库管理系统的崇高体系架构上划分，主要有 <span style="color:red;"><strong>表现层、功能层、逻辑层、数据层</strong></span>层次组成。</p>
+<p>13．数据表连接关系由 <span style="color:red;"><strong>左外链接     、 右外链接      、   全外链接     、   交叉链接      、  内链接</strong></span>五种。</p>
+<p>14．数据库E-R图是指 <span style="color:red;"><strong>实体和对象之间的相互关系用图表的方式进行展现       的关系</strong></span>的关系。</p>
+<p>15．在数据管理系统中，变量有 <span style="color:red;"><strong>固定变量    、    局部变量   和 字段名变量</strong></span>等组成，它们之间主要的区别是 <span style="color:red;"><strong>固定变量不能创建新的变量，是系统固定；局部变量是用户可自定义的变量，作用范围在程序内部；字段名变量定义在数据表中，字段名存储在数据表里不会改变</strong></span>。</p>
+<h3 id="二、选择题（每题2分，共24分）"><a href="#二、选择题（每题2分，共24分）" class="headerlink" title="二、选择题（每题2分，共24分）"></a>二、选择题（每题2分，共24分）</h3><p>1．SQL语言集数据查询、数据操作、数据定义、和数据控制功能于一体，语句CREATE、DROP、ALTER实现下列哪类功能(<span style="color:red;"><strong>C</strong></span>)。</p>
+<p>A．数据查询      B．数据操纵</p>
+<p>C．数据定义      D．数据控制</p>
+<ol start="2">
+<li>在<span style="color:red;">非Unicode</span>统一字符编码标准中，可变长度1000个汉字定义方式是（<span style="color:red;"><strong>C</strong></span>）：</li>
+</ol>
+<p>A．varchar(1000)      B．char(1000)</p>
+<p>C．varchar(2000)      D．varchar(1000) </p>
+<p>3．在销售表中，计算产品的销售量，应使用的聚合函数(<span style="color:red;"><strong>D</strong></span>)：</p>
+<p>A．Order By 销售产品    B．Computer By销售产品</p>
+<p>C．count(销售产品)      D．Sum(销售产品) </p>
+<p>4．在数据表中，需要对某一字段进行域的约束，下列方式中哪一种：(<span style="color:red;"><strong>C</strong></span>) 。</p>
+<p>A．主键（PK）     B．外键(FK)</p>
+<p>C．规则        D．唯一性（Unique）</p>
+<p>5．管理信息系统指的是：(<span style="color:red;"><strong>D</strong></span>)。</p>
+<p>A．管理信息组成及其各部分之间关系的系统</p>
+<p>B．管理信息的计算机软件与硬件结构的组成系统</p>
+<p>C．管理信息的人机交互的应用软件系统</p>
+<p>D．管理信息收集,传输,加工,储存、维护,并围绕管理目标的人机系统.</p>
+<p>6．与 WHERE G BETWEEN 60 AND 100 语句等价的子句是：(<span style="color:red;"><strong>D</strong></span>) 。</p>
+<p>A．WHERE G &gt; 60AND G&lt; 100   B．WHERE G &gt;= 60AND G &lt; 100</p>
+<p>C．WHERE G &gt; 60AND G&lt;=100   D．WHERE G&gt;=60AND G &lt; =100</p>
+<p>7．要查询STUDENT数据库SC表中姓名含有“王”的学生情况，可用(<span style="color:red;"><strong>A</strong></span>)命令。</p>
+<p>A．SELECT * FROM S WHERE 姓名 LIKE ’%王%’</p>
+<p>B．SELECT * FROM STUDENT WHERE 姓名 LIKE ’王’</p>
+<p>C．SELECT * FROM S WHERE 姓名 LIKE ’王_’ </p>
+<p>D．SELECT * FROM S WHERE 姓名=’王’</p>
+<p>8．数据库的内容更新可由(<span style="color:red;"><strong>C</strong></span>)操作实现。</p>
+<p>　A．CREATE和UPDATE  　　  B．INSERT和SELETE</p>
+<p>C．INSERT、UPDATE和DELETE  D．DROP </p>
+<p>9．在视图上不能完成的操作是(<span style="color:red;"><strong>D</strong></span>) 。</p>
+<p>A．在视图上定义新的视图     B．查询操作</p>
+<p>C．更新视图           D．在视图上定义新的基本表</p>
+<p>10．有一个关系：学生（学号，姓名，系别），规定学号的值域是8个数字组成的字符串，这一规则属于(<span style="color:red;"><strong>C</strong></span>) 。</p>
+<p>A．实体完整性约束        B．参照完整性约束</p>
+<p>C．用户自定义完整性约束     D．关键字完整性约束</p>
+<p>11．在销售数据中，要统计某一类产品销售总额，并从中选择满足条件的组，实现这一要求选择(<span style="color:red;"><strong>C</strong></span>)。</p>
+<p>A．Sum, Group by         B．Group by, Where </p>
+<p>C．Sum, Group by, Having     D．Sum, Group by, Where</p>
+<ol start="12">
+<li>下列哪一种约束必须是非空的(<span style="color:red;"><strong>A</strong></span>)：</li>
+</ol>
+<p>A．主键（PK）          B．外键(FK)   </p>
+<p>C．规则（Rule）          D．唯一性（Unique）</p>
+<h3 id="三、基本操作题（每小题5分，共15分）"><a href="#三、基本操作题（每小题5分，共15分）" class="headerlink" title="三、基本操作题（每小题5分，共15分）"></a>三、基本操作题（每小题5分，共15分）</h3><h4 id="1．在学生数据表（student）中，表中有学号-sno-、姓名-sname-、性别-sex-、年龄-sage-、班级（Class）字段，写出T-SQL语言的插入操作命令，其中学号为’1005’，姓名叫’王芳’，年龄20岁，性别的女的同学信息。"><a href="#1．在学生数据表（student）中，表中有学号-sno-、姓名-sname-、性别-sex-、年龄-sage-、班级（Class）字段，写出T-SQL语言的插入操作命令，其中学号为’1005’，姓名叫’王芳’，年龄20岁，性别的女的同学信息。" class="headerlink" title="1．在学生数据表（student）中，表中有学号(sno)、姓名(sname)、性别(sex)、年龄(sage)、班级（Class）字段，写出T-SQL语言的插入操作命令，其中学号为’1005’，姓名叫’王芳’，年龄20岁，性别的女的同学信息。"></a>1．在学生数据表（student）中，表中有学号(sno)、姓名(sname)、性别(sex)、年龄(sage)、班级（Class）字段，写出T-SQL语言的插入操作命令，其中学号为’1005’，姓名叫’王芳’，年龄20岁，性别的女的同学信息。</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student</span><br><span class="line">(sno,sname,sex,asge)<span class="keyword">VALUES</span>(<span class="number">1005</span>,<span class="string">'王芳'</span>，<span class="number">20</span>,<span class="string">'女'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="2．有一学生数据表为student，数据结构与上题想通过，写出T-SQL语言的修改操作命令，同时将王芳同学的年龄与班级修改为“22岁”和“2012级自动化1班-”。"><a href="#2．有一学生数据表为student，数据结构与上题想通过，写出T-SQL语言的修改操作命令，同时将王芳同学的年龄与班级修改为“22岁”和“2012级自动化1班-”。" class="headerlink" title="2．有一学生数据表为student，数据结构与上题想通过，写出T-SQL语言的修改操作命令，同时将王芳同学的年龄与班级修改为“22岁”和“2012级自动化1班 ”。"></a>2．有一学生数据表为student，数据结构与上题想通过，写出T-SQL语言的修改操作命令，同时将王芳同学的年龄与班级修改为“22岁”和“2012级自动化1班 ”。</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> student <span class="keyword">SET</span> sage=<span class="number">22</span>,<span class="keyword">class</span>=<span class="string">'2012级自动化1班'</span></span><br><span class="line"><span class="keyword">WHERE</span> sname=<span class="string">'王芳'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3．用T-SQL语言编写创建一个教师数据表，内容包括教师编号（Tid），长度10位，教师名（Tname），4个汉字、性别（Sex），1个汉字，所在学院（Academy），50个汉字长度，以教师编号作为主键。"><a href="#3．用T-SQL语言编写创建一个教师数据表，内容包括教师编号（Tid），长度10位，教师名（Tname），4个汉字、性别（Sex），1个汉字，所在学院（Academy），50个汉字长度，以教师编号作为主键。" class="headerlink" title="3．用T-SQL语言编写创建一个教师数据表，内容包括教师编号（Tid），长度10位，教师名（Tname），4个汉字、性别（Sex），1个汉字，所在学院（Academy），50个汉字长度，以教师编号作为主键。"></a>3．用T-SQL语言编写创建一个教师数据表，内容包括教师编号（Tid），长度10位，教师名（Tname），4个汉字、性别（Sex），1个汉字，所在学院（Academy），50个汉字长度，以教师编号作为主键。</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dbo.teacher(</span><br><span class="line">	Tid <span class="built_in">INT</span> <span class="keyword">CONSTRAINT</span> PK_1 PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">	Tname <span class="built_in">VARCHAR</span>(<span class="number">8</span>),</span><br><span class="line">	Sex <span class="built_in">char</span>(<span class="number">2</span>),</span><br><span class="line">	Academy <span class="built_in">VARCHAR</span>(<span class="number">100</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="四、编程题（3小题，共16分）"><a href="#四、编程题（3小题，共16分）" class="headerlink" title="四、编程题（3小题，共16分）"></a>四、编程题（3小题，共16分）</h3><h4 id="1．在药品销售表-xs-中，数据结构有药品名称（ypmc）-药品类别（lb），药品数量（sl）等字段，其中药品类别数据存放是76、77、78、空值，分别表示“处方药品”、“非处方药品”、“医疗器械”，“其它药品”。请写出药品数据查询命令，并要求将药品类别编码数据一次性转换为可读文本数据。（5分）"><a href="#1．在药品销售表-xs-中，数据结构有药品名称（ypmc）-药品类别（lb），药品数量（sl）等字段，其中药品类别数据存放是76、77、78、空值，分别表示“处方药品”、“非处方药品”、“医疗器械”，“其它药品”。请写出药品数据查询命令，并要求将药品类别编码数据一次性转换为可读文本数据。（5分）" class="headerlink" title="1．在药品销售表(xs)中，数据结构有药品名称（ypmc）,药品类别（lb），药品数量（sl）等字段，其中药品类别数据存放是76、77、78、空值，分别表示“处方药品”、“非处方药品”、“医疗器械”，“其它药品”。请写出药品数据查询命令，并要求将药品类别编码数据一次性转换为可读文本数据。（5分）"></a>1．在药品销售表(xs)中，数据结构有药品名称（ypmc）,药品类别（lb），药品数量（sl）等字段，其中药品类别数据存放是76、77、78、空值，分别表示“处方药品”、“非处方药品”、“医疗器械”，“其它药品”。请写出药品数据查询命令，并要求将药品类别编码数据一次性转换为可读文本数据。（5分）</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创表添加数据</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dbo.xs(	</span><br><span class="line">	ypmc <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	lb <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	sl <span class="built_in">int</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> xs(ypmc,lb,sl) </span><br><span class="line"><span class="keyword">values</span> (<span class="string">'脑白金'</span>,<span class="string">'76'</span>,<span class="number">122</span>),</span><br><span class="line">(<span class="string">'云南白药'</span>,<span class="string">'77'</span>,<span class="number">122</span>),</span><br><span class="line">(<span class="string">'999皮炎平'</span>,<span class="string">'78'</span>,<span class="number">122</span>),</span><br><span class="line">(<span class="string">'止咳糖浆'</span>,<span class="literal">null</span>,<span class="number">122</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> xs <span class="keyword">SET</span> lb=(<span class="keyword">CASE</span></span><br><span class="line">	<span class="keyword">WHEN</span> lb=<span class="string">'76'</span> <span class="keyword">THEN</span> <span class="string">'处方药品'</span></span><br><span class="line">	<span class="keyword">WHEN</span> lb=<span class="string">'77'</span> <span class="keyword">THEN</span> <span class="string">'非处方药品'</span></span><br><span class="line">	<span class="keyword">WHEN</span> lb=<span class="string">'78'</span> <span class="keyword">THEN</span> <span class="string">'医疗器械'</span></span><br><span class="line">	<span class="keyword">ELSE</span> <span class="string">'其它药品'</span></span><br><span class="line"><span class="keyword">END</span>)</span><br><span class="line"><span class="keyword">from</span> xs</span><br></pre></td></tr></table></figure>
+
+<h4 id="2．在学校学籍管理系统中，有三个相关的数据表，分别是学生-Student-、课程表（Course）-和成绩表-Score-。其中三个表的主键分别是Student-id-、Course-id、-Score-id。要求输出选修-“数据库技术与应用”-课程（Course-name）学生的学号（Student-id）、姓名（stu-name）、考试成绩（course-score），并按照降序排列；（5分）"><a href="#2．在学校学籍管理系统中，有三个相关的数据表，分别是学生-Student-、课程表（Course）-和成绩表-Score-。其中三个表的主键分别是Student-id-、Course-id、-Score-id。要求输出选修-“数据库技术与应用”-课程（Course-name）学生的学号（Student-id）、姓名（stu-name）、考试成绩（course-score），并按照降序排列；（5分）" class="headerlink" title="2．在学校学籍管理系统中，有三个相关的数据表，分别是学生(Student)、课程表（Course）)和成绩表(Score)。其中三个表的主键分别是Student_id 、Course_id、 Score_id。要求输出选修 “数据库技术与应用” 课程（Course_name）学生的学号（Student_id）、姓名（stu_name）、考试成绩（course_score），并按照降序排列；（5分）"></a>2．在学校学籍管理系统中，有三个相关的数据表，分别是学生(Student)、课程表（Course）)和成绩表(Score)。其中三个表的主键分别是Student_id 、Course_id、 Score_id。要求输出选修 “数据库技术与应用” 课程（Course_name）学生的学号（Student_id）、姓名（stu_name）、考试成绩（course_score），并按照降序排列；（5分）</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--注意：用了综合题的例子!需要修改值</span></span><br><span class="line"><span class="keyword">SELECT</span> b.cname,a.sno,a.sname,c.grade</span><br><span class="line"><span class="keyword">FROM</span> Student <span class="keyword">AS</span> a,Course <span class="keyword">AS</span> b,Score <span class="keyword">AS</span> c</span><br><span class="line"><span class="keyword">WHERE</span> b.cname=<span class="string">'数据库技术与应用'</span><span class="keyword">AND</span> a.sno=c.scno <span class="keyword">AND</span> b.cno=c.cno</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> grade <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3．查询“数据库技术与应用”课程考试成绩超过平均值的所有学生的学号、姓名、班级、课程名称、成绩，并按照成绩降序排列。（6）"><a href="#3．查询“数据库技术与应用”课程考试成绩超过平均值的所有学生的学号、姓名、班级、课程名称、成绩，并按照成绩降序排列。（6）" class="headerlink" title="3．查询“数据库技术与应用”课程考试成绩超过平均值的所有学生的学号、姓名、班级、课程名称、成绩，并按照成绩降序排列。（6）"></a>3．查询“数据库技术与应用”课程考试成绩超过平均值的所有学生的学号、姓名、班级、课程名称、成绩，并按照成绩降序排列。（6）</h4><p>Student(sno、sname、sage、ssex、sclass);</p>
+<p>Course(cno、cname、credit、teacher);</p>
+<p>Score(scno、cno、sage、grade);</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--注意：用了综合题的例子!需要修改值</span></span><br><span class="line"><span class="keyword">SELECT</span> b.cname,a.sno,a.sname,c.grade</span><br><span class="line"><span class="keyword">FROM</span> Student <span class="keyword">AS</span> a,Course <span class="keyword">AS</span> b,Score <span class="keyword">AS</span> c</span><br><span class="line"><span class="keyword">WHERE</span> b.cname=<span class="string">'数据库技术与应用'</span><span class="keyword">AND</span> a.sno=c.scno <span class="keyword">AND</span> b.cno=c.cno</span><br><span class="line"><span class="keyword">AND</span> c.grade&gt;(</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(Score.grade) </span><br><span class="line"><span class="keyword">FROM</span> Score,Course </span><br><span class="line"><span class="keyword">WHERE</span> cname=<span class="string">'数据库技术与应用'</span> <span class="keyword">AND</span> Score.cno=Course.cno</span><br><span class="line">)</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> grade <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+<h3 id="五、综合题（2题，共30分）"><a href="#五、综合题（2题，共30分）" class="headerlink" title="五、综合题（2题，共30分）"></a>五、综合题（2题，共30分）</h3><h4 id="1．利用T-SQL语言编写程序，求1-2-3-4-…-100-；（10分）"><a href="#1．利用T-SQL语言编写程序，求1-2-3-4-…-100-；（10分）" class="headerlink" title="1．利用T-SQL语言编写程序，求1+2!+3!+4!+…..+100!；（10分）"></a>1．利用T-SQL语言编写程序，求1+2!+3!+4!+…..+100!；（10分）</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--注意：1+2!+3!+4!+…..+10!</span></span><br><span class="line"><span class="keyword">Declare</span> @s <span class="built_in">int</span>, @i <span class="built_in">int</span>,@sumi <span class="built_in">int</span></span><br><span class="line"><span class="keyword">Select</span> @s=<span class="number">1</span>,@i=<span class="number">1</span>,@sumi=<span class="number">0</span></span><br><span class="line"><span class="keyword">WHILE</span> @i&lt;<span class="number">11</span> <span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SET</span> @s=@s*@i</span><br><span class="line"><span class="keyword">SET</span>	@sumi+=@s</span><br><span class="line"><span class="keyword">SET</span> @i+=<span class="number">1</span></span><br><span class="line"><span class="keyword">END</span></span><br><span class="line">Print @sumi</span><br></pre></td></tr></table></figure>
+
+<h4 id="2．设计和编写一个学生学籍管理系统的数据库，假设学生、课程、成绩和老师的数据库关系如下：（20分）"><a href="#2．设计和编写一个学生学籍管理系统的数据库，假设学生、课程、成绩和老师的数据库关系如下：（20分）" class="headerlink" title="2．设计和编写一个学生学籍管理系统的数据库，假设学生、课程、成绩和老师的数据库关系如下：（20分）"></a>2．设计和编写一个学生学籍管理系统的数据库，假设学生、课程、成绩和老师的数据库关系如下：（20分）</h4><p>1.Student(sno、sname、sage、ssex、sclass);</p>
+<p>2.Course(cno、cname、credit、pubic、author);</p>
+<p>3.Score(scno、cno、sage、grade);</p>
+<p>4.Teacher(tno、tname、tsex、tage)</p>
+<p>  用T-SQL语言实现以下功能：</p>
+<p>（1）  根据E-R图，构造其关系图；</p>
+<p>（2）  用T-SQL编写创建数据结构表，制定主健（PK）和外健（FK）的字段名；</p>
+<p>（3）  求张老师教的“数据库技术与应用”课程的平均成绩；</p>
+<p>（4）  求选修张老师课程的学生清单；</p>
+<p>（5） 求选修张老师课程的学生成绩清单；</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建数据表</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dbo.Student(</span><br><span class="line">	sno <span class="built_in">INT</span> <span class="keyword">CONSTRAINT</span> PK_Student PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">	sname <span class="built_in">VARCHAR</span>(<span class="number">50</span>), </span><br><span class="line">	sage <span class="built_in">INT</span>,</span><br><span class="line">	ssex <span class="built_in">CHAR</span>(<span class="number">2</span>),</span><br><span class="line">	sclass <span class="built_in">VARCHAR</span>(<span class="number">50</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dbo.Course(</span><br><span class="line">	cno <span class="built_in">INT</span> <span class="keyword">CONSTRAINT</span> PK_Course PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">	cname <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	credit <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	pubic <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	author <span class="built_in">VARCHAR</span>(<span class="number">50</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dbo.Score(</span><br><span class="line">	scno <span class="built_in">INT</span> <span class="keyword">CONSTRAINT</span> FK_Student <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span>(scno) <span class="keyword">REFERENCES</span> Student(sno),</span><br><span class="line">	cno <span class="built_in">INT</span> <span class="keyword">CONSTRAINT</span> FK_Course <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span>(cno) <span class="keyword">REFERENCES</span> Course(cno),</span><br><span class="line">	grade <span class="built_in">FLOAT</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dbo.Teacher(</span><br><span class="line">	tno <span class="built_in">INT</span> <span class="keyword">CONSTRAINT</span> PK_Teacher PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">	tname <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	tsex <span class="built_in">CHAR</span>(<span class="number">2</span>),</span><br><span class="line">	tage <span class="built_in">INT</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">--添加数据</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Student(sno,sname,sage,ssex,sclass) </span><br><span class="line"><span class="keyword">values</span> (<span class="number">1</span>,<span class="string">'小超'</span>,<span class="number">23</span>,<span class="string">'男'</span>,<span class="string">'软专1901'</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">'小王'</span>,<span class="number">23</span>,<span class="string">'男'</span>,<span class="string">'软专1902'</span>),</span><br><span class="line">(<span class="number">3</span>,<span class="string">'小芳'</span>,<span class="number">23</span>,<span class="string">'女'</span>,<span class="string">'软专1902'</span>),</span><br><span class="line">(<span class="number">4</span>,<span class="string">'小胡'</span>,<span class="number">23</span>,<span class="string">'男'</span>,<span class="string">'软专1901'</span>),</span><br><span class="line">(<span class="number">5</span>,<span class="string">'小红'</span>,<span class="number">22</span>,<span class="string">'女'</span>,<span class="string">'软专1903'</span>),</span><br><span class="line">(<span class="number">6</span>,<span class="string">'小花'</span>,<span class="number">22</span>,<span class="string">'女'</span>,<span class="string">'软专1903'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Teacher(tno,tname,tsex,tage) </span><br><span class="line"><span class="keyword">values</span> (<span class="number">1</span>,<span class="string">'吴军'</span>,<span class="string">'男'</span>,<span class="number">33</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">'刘艳'</span>,<span class="string">'男'</span>,<span class="number">33</span>),</span><br><span class="line">(<span class="number">3</span>,<span class="string">'马红'</span>,<span class="string">'女'</span>,<span class="number">31</span>),</span><br><span class="line">(<span class="number">4</span>,<span class="string">'李白'</span>,<span class="string">'男'</span>,<span class="number">28</span>),</span><br><span class="line">(<span class="number">5</span>,<span class="string">'杜甫'</span>,<span class="string">'男'</span>,<span class="number">35</span>),</span><br><span class="line">(<span class="number">6</span>,<span class="string">'张老师'</span>,<span class="string">'女'</span>,<span class="number">44</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Course(cno,cname,credit,pubic,author) </span><br><span class="line"><span class="keyword">values</span> (<span class="number">1</span>,<span class="string">'数据库技术与应用'</span>,<span class="string">'学习数据库'</span>,<span class="string">'123'</span>,<span class="string">'张老师'</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">'JavaScript'</span>,<span class="string">'学习js'</span>,<span class="string">'123'</span>,<span class="string">'王艳'</span>),</span><br><span class="line">(<span class="number">3</span>,<span class="string">'C'</span>,<span class="string">'学习c'</span>,<span class="string">'123'</span>,<span class="string">'杜甫'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Score(scno,cno,grade) </span><br><span class="line"><span class="keyword">values</span> (<span class="number">1</span>,<span class="number">1</span>,<span class="number">100</span>),(<span class="number">1</span>,<span class="number">2</span>,<span class="number">100</span>),(<span class="number">1</span>,<span class="number">3</span>,<span class="number">100</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="number">1</span>,<span class="number">90</span>),(<span class="number">2</span>,<span class="number">2</span>,<span class="number">90</span>),(<span class="number">2</span>,<span class="number">3</span>,<span class="number">67</span>),</span><br><span class="line">(<span class="number">3</span>,<span class="number">1</span>,<span class="number">60</span>),(<span class="number">3</span>,<span class="number">2</span>,<span class="number">72</span>),(<span class="number">3</span>,<span class="number">3</span>,<span class="number">90</span>),</span><br><span class="line">(<span class="number">4</span>,<span class="number">1</span>,<span class="number">70</span>),(<span class="number">4</span>,<span class="number">2</span>,<span class="number">88</span>),(<span class="number">4</span>,<span class="number">3</span>,<span class="number">78</span>),</span><br><span class="line">(<span class="number">5</span>,<span class="number">1</span>,<span class="number">88</span>),(<span class="number">5</span>,<span class="number">2</span>,<span class="number">45</span>),(<span class="number">5</span>,<span class="number">3</span>,<span class="number">76</span>),</span><br><span class="line">(<span class="number">6</span>,<span class="number">1</span>,<span class="number">86</span>),(<span class="number">6</span>,<span class="number">2</span>,<span class="number">88</span>),(<span class="number">6</span>,<span class="number">3</span>,<span class="number">81</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--求张老师教的“数据库技术与应用”课程的平均成绩</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(grade) <span class="keyword">AS</span> 数据库技术与应用平均成绩</span><br><span class="line"><span class="keyword">FROM</span> Score </span><br><span class="line"><span class="keyword">WHERE</span> Score.cno=<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--求选修张老师课程的学生清单</span></span><br><span class="line"><span class="keyword">SELECT</span> a.sno,a.sname,a.sage,a.ssex,a.sclass,b.author</span><br><span class="line"><span class="keyword">FROM</span> Student <span class="keyword">AS</span> a,Course <span class="keyword">AS</span> b</span><br><span class="line"><span class="keyword">WHERE</span> b.author=<span class="string">'张老师'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--求选修张老师课程的学生成绩清单</span></span><br><span class="line"><span class="keyword">SELECT</span> a.sno,a.sname,a.sage,a.ssex,a.sclass,b.author,c.grade</span><br><span class="line"><span class="keyword">FROM</span> Student <span class="keyword">AS</span> a,Course <span class="keyword">AS</span> b,Score <span class="keyword">AS</span> c</span><br><span class="line"><span class="keyword">WHERE</span> b.author=<span class="string">'张老师'</span><span class="keyword">AND</span> a.sno=c.scno <span class="keyword">AND</span> b.cno=c.cno</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
   </div>
 
   
@@ -756,7 +782,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
